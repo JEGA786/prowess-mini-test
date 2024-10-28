@@ -1,0 +1,1760 @@
+<!DOCTYPE HTML>
+<html>
+<head layout:fragment="custom-head">
+<title>Book Publishing Price Packages in India - Prowess Publishing</title>
+<link rel="stylesheet" href="/style.css">
+<meta name="description" content="We offer affordable book and ebook publishing price packages from beginner to professional levels so that it will be meet every author need of publishing a book">
+<meta name="keywords" content="book publishing service in Hyderabad, book printing cost in India, book publishing price in India, book publishing packages in India, professional book publishing packages, seasoned book publishing offers, Be an author with freshman plan, book publishing plans in India">
+<link rel="canonical" href="https://www.prowesspub.com/book-publishing-packages.html" />
+<link rel="alternate" href="https://www.prowesspub.com/book-publishing-packages.html" hreflang="en" />
+<th:block th:include="layout/partials/prowesshead" th:with="hasMetaDesc=${true}"/>
+<!--head th:replace="layout/partials/prowesshead"></head-->
+<script th:src="@{/js/packages-Table.js}" type="text/javascript"></script>
+<script th:inline="javascript">
+//<![CDATA[
+function addToCart(productId,categoryId,price){
+	
+	$("#productId").val(productId);
+	$("#categoryId").val(categoryId);
+	var tax = ((((price)/100)*18).toFixed(2));
+	var total=(Number(price)+Number(tax)).toFixed(2);
+	$("#package_tax").val(tax);
+	$("#package_total").val(total);
+	var customerCheck=[[${customer.anonymous}]];
+	if(customerCheck){
+		$('#packageLogin').modal('toggle');
+		
+	}else{
+		placeorder();
+	}
+	
+	//$("#alacartadd").submit();
+}
+function addToCartNew(productId,categoryId,price){
+var cartOrderItemId=$('#cartOrderItemId').val();
+var cartProductId=$('#cartProductId').val();
+var cartSkuId=$('#cartSkuId').val();
+$("#cartProductId1").val(cartProductId);
+$("#cartOrderItemId1").val(cartOrderItemId);
+$("#cartSkuId1").val(cartSkuId);
+
+$("#alacartremove").submit();
+
+
+	//$('#hiddenFrame1').attr('src', [[@{/cart/remove}]]+"?orderItemId="+cartOrderItemId+"&amp;productId="+cartProductId);
+	//sleep(2000);
+	$("#productId").val(productId);
+	$("#categoryId").val(categoryId);
+	var tax = ((((price)/100)*18).toFixed(2));
+	var total=(Number(price)+Number(tax)).toFixed(2);
+	$("#package_tax").val(tax);
+	$("#package_total").val(total);
+	var customerCheck=[[${customer.anonymous}]];
+	if(customerCheck){
+		$('#packageLogin').modal('toggle');
+		
+	}else{
+		placeorder();
+	}
+	
+	//$("#alacartadd").submit();
+}
+function addToCartSubmit(){
+	$("#alacartadd").submit();
+}
+function sleep(delay) {
+        var start = new Date().getTime();
+        while (new Date().getTime() < start + delay);
+      }
+//]]>	
+</script>
+<style>
+.hide {
+	position:absolute;
+	top:-1px;
+	left:-1px;
+	width:1px;
+	height:1px;
+}
+.packagesTableContent h2{
+     font-weight: 600;
+     margin-bottom: 30px!important;
+}
+.offer{
+   font-weight: 700;
+   color:#fa1414!important;
+}
+.packageHeaderContent .packageHeaderMiddleContent .middleBottomContent p {
+    color: #000;
+    position: relative;
+    font-size: 19px;
+}
+.PackagesBanner {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 9;
+	justify-content: center;
+	display : flex;
+	flex-direction: row !important;
+	justify-content: space-around !important;
+}
+
+</style>
+</head>
+<body onload="StartTimers();" onmousemove="ResetTimers();" onKeyPress="ResetTimers();">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNGCBB3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--wrapper content start here-->
+<section id="wrapper">
+  <!--header start here-->
+  <header th:replace="layout/partials/prowessheader"></header>
+  <!--header end here-->
+  <!--main content start here-->
+  <div class="mainContent">
+    <!--about us banner content start here-->
+    <div class="PackagesBanner">
+        
+        <img class="first-slide"  th:src="@{/img/christmas-banner.jpg}" alt="christmas special"/ >
+        
+      <!-- picture>
+        <source type="image/webp" data-srcset="https://www.prowesspub.com/img/web/packages-page.webp" />
+        <source type="image/jpg" data-srcset="https://www.prowesspub.com/img/packages-page.jpg" />
+        <img class="lazyload" data-src="https://www.prowesspub.com/img/packages-page.jpg" alt="packages-page" title="packages-page" /> </picture -->
+        
+        
+    </div>
+    <!--about us banner content end here-->
+    <!--about us content start here-->
+    <div id="cartItems" th:each="item : ${cart.orderItems}" th:object="${item}">
+      <input type="hidden" id="cartOrderItemId" th:value="*{id}">
+      <input type="hidden" id="cartProductId" th:value="*{product.id}">
+      <input type="hidden" id="cartSkuId" th:value="*{product.defaultSku.id}">
+    </div>
+    <blc:form id="alacartremove" method="POST" th:action="@{/cart/updateQuantity}" target="hiddenFrame1">
+      <input type="hidden" name="productId" id="cartProductId1" value="" />
+      <input type="hidden" name="skuId" id="cartSkuId1" value="" />
+      <input type="hidden" name="orderItemId" id="cartOrderItemId1" value="" />
+      <input type="hidden" name="quantity" class="quantityInput" value="0" />
+    </blc:form>
+    <iframe name="hiddenFrame1" id="hiddenFrame1" class="hide"></iframe>
+    <div class="PackagesContent">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <!--packages table content start here-->
+            <div class="packagesTableContent">
+                <!--<h2>Grab <span class="offer">10%</span> Off—Don't Miss Out on This Exclusive Deal!</h2>-->
+              <table class="main-table">
+                <tr>
+                  <!--Package features td start here-->
+                  
+                  <td class="package-features-content"><div class="packagesTableContainer">
+                      
+                      <table class="blue package-features-data fixed">
+                        <thead style="">
+                          <tr>
+                            <th class="title"> <div class="pps-packages-features"> <span>Package Features</span> </div></th>
+                          </tr>
+                        </thead>
+                      </table>
+                      <table class="blue package-features-data">
+                        <thead>
+                          <tr>
+                            <th class="title"> <div class="pps-packages-features"> <span>Features</span> </div></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="pps-bor"><p>Word Count</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>ISBN</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Copyrights</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Complimentary copies</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Social media promotions</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Royalty</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Distribution</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p></p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">Design</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Interior and Cover for Review</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Interior</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Cover</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Images & Tables (Supplied by Author)</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Images & Tables (illustrations)</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">Project Management</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Dedicated Project Manager</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Project Planning </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">Editing</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Copy Editing</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Comprehensive Editing</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">Printing</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Digital Gallery</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Complimentary Copies</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Additional Copies</p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p>Inventory Management</p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">Distribution</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>India Online Distribution (Print)</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>International Distribution (eBooks)</p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p>Ingram Distribution</p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">E-Books</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>eBook Creation</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>eBook Distribution</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">Marketing</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Social Media Promotions</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Author Website</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Book Marketing Plan</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Video Trailer</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Facebook Ads</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><!--<p>Google Ads</p>-->
+                              <p>Instagram Ads</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Online Press release</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>E-mail Marketing</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">Royalty</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Sales tracker</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>eBook Royalty %</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Print Book Royalty %</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Post Pub Support</p></td>
+                          </tr>
+                          <tr class="btn-section">
+                            <td class="buy-now">* Applicable tax will be charged separately. </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div></td>
+                  <!--Package features td end here-->
+                  <!--Basic package td start here-->
+                  <td class="basic-package-content"><div class="packagesTableContainer">
+                      <table class="blue basic-package-data">
+                        <thead>
+                          <tr>
+                            <th class="title"> <div class="packageHeaderContent professional">
+                                <div class="packageHeaderTopContent">
+                                  <picture>
+                                    <source type="image/webp" data-srcset="https://www.prowesspub.com/img/web/Professional-image.webp" />
+                                    <source type="image/png" data-srcset="https://www.prowesspub.com/img/Professional-image.png" />
+                                    <img class="lazyload" data-src="https://www.prowesspub.com/img/Professional-image.png" alt="Professional-image" title="Professional-image" /> </picture>
+                                </div>
+                                <div class="packageHeaderMiddleContent">
+                                  <div class="middleTopContent">
+                                    <p >Professional</p>
+                                  </div>
+                                  <div class="middleBottomContent oldPrice">
+                                    <div >
+                                      <p><span class="rupee" >&#x20b9;</span>79,999 <p class="gst"><span>+ GST</span></p>
+                                      
+                                      
+                                      <!--<p><span class="rupee fs-4">&#x20b9;</span>71,999</p>-->
+                                      <!--<p class="orginal-price"><span class="rupee"></span>79,999</p><span class="gst"> + GST</span>-->
+                                    </div>
+                                    </div>
+                                   
+                                     
+                                    
+                                    <!--new price start here-->
+                                    
+                                    <!--div class="newPrice">
+                                    <span class="text-strike"></span>
+                                      <p><span class="rupee">&#x20b9;</span>71,999</p>
+                                      <p class="gst"><span>+ GST</span></p>
+                                    </div-->
+                                    <!--new price end here-->
+                                  </div>
+                                  <!--package test start here-->
+                                  <!--<div class="packageDetails">-->
+                                  <!--  <h3>Professional</h3>-->
+                                  <!--  <p><span class="rupee">&#x20b9;</span>79,999</p>-->
+                                  <!--  <p class="gst"><span>+ GST</span></p>-->
+                                  <!--</div>-->
+                                  <!--package test end here-->
+                                </div>
+                              </div></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="pps-bor basic-package-contents"><p class="lakh-count">Up to 1 Lakh</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <!--td class="pps-bor"><p>25 B&W or 5 Color</p></td-->
+                            <td class="pps-bor"><p>10 B&W or 5 Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>4 Weeks</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="bottom-buynow"><!--div class="pps-basic-package-btn"><a th:onclick="'javascript:addToCart(\''+*{products[4].id}+'\',\''+*{products[4].defaultCategory.id}+'\',\''+*{products[4].defaultSku.retailPrice}+'\');'" class="BuyNow PackageAmount1"><img  th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a></div></td-->
+                              <div class="pps-basic-package-btn" th:each="product:${products}" th:if="${product.id==54}">
+                                <!--a th:onclick="'javascript:addToCart(\'54\',\'2009\',\'79999.00\');'" class="BuyNow PackageAmount1"><img  th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a-->
+                                <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                  <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                  </span> <span th:if="${inCart != true}">
+                                  <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
+                                    <!--a class="BuyNow PackageAmount2" th:onclick="'javascript:addToCart(\''+*{products[4].id}+'\',\''+*{products[4].defaultCategory.id}+'\',\''+*{products[4].defaultSku.retailPrice}+'\');'"><picture>
+   <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+   <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+   <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> 
+</picture></a-->
+                                    <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\'54\',\'2009\',\'71999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCartNew(\'54\',\'2009\',\'71999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> </div>
+                                  </span> </div>
+                              </div></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>3 Samples</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>B&W / Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Up to 100</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>10 B&W or 5 Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>At printing cost</p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>4 Weeks</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> 80% </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> 60% </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr class="btn-section">
+                            <td class="bottom-buynow"><div class="pps-cost">
+                                <div class="pps-book-cost">
+                                  <div class="pps-books-cost professional">
+                                    <div class="newPrice">
+                                      <p><span class="rupee">&#x20b9;</span>79,999</p>
+                                    </div>
+                                    <p class="gst"><span>+ GST</span></p>
+                                    <div class="oldPrice">
+                                      <p><span class="rupee">&#x20b9;</span>79,999</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="pps-basic-package-btn" th:each="product:${products}" th:if="${product.id==54}">
+                                <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                  <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                  </span> <span th:if="${inCart != true}">
+                                  <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
+                                    <!--a class="BuyNow PackageAmount2" th:onclick="'javascript:addToCart(\''+*{products[4].id}+'\',\''+*{products[4].defaultCategory.id}+'\',\''+*{products[4].defaultSku.retailPrice}+'\');'"><picture>
+   <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+   <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+   <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> 
+</picture></a-->
+                                    <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount2" th:onclick="'javascript:addToCart(\'54\',\'2009\',\'71999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount2" th:onclick="'javascript:addToCartNew(\'54\',\'2009\',\'71999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> </div>
+                                  </span> </div>
+                              </div></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div></td>
+                  <!--Basic package td end here-->
+                  <!--Plus package td start here-->
+                  <td class="plus-package-content"><div class="packagesTableContainer">
+                      <table class="blue plus-package-data">
+                        <thead>
+                          <tr>
+                            <th class="title"> <div class="packageHeaderContent champion">
+                                <div class="packageHeaderTopContent">
+                                  <picture>
+                                    <source type="image/webp" data-srcset="https://www.prowesspub.com/img/web/packages-champion.webp" />
+                                    <source type="image/png" data-srcset="https://www.prowesspub.com/img/packages-champion.png" />
+                                    <img class="lazyload" data-src="https://www.prowesspub.com/img/packages-champion.png" alt="packages-champion" title="packages-champion" /> </picture>
+                                </div>
+                                <div class="packageHeaderMiddleContent">
+                                  <div class="middleTopContent">
+                                    <p>Champion</p>
+                                  </div>
+                                  <div class="middleBottomContent oldPrice">
+                                    <div class="d-flex" >
+                                      <p><span class="rupee">&#x20b9;</span>59,999<p class="gst"><span>+ GST</span> </p>
+                                    <!--<p><span class="rupee fs-4">&#x20b9;</span>53,999</p>-->
+                                    <!--  <p class="orginal-price"><span class="rupee">&#x20b9;</span>59,999</p><span class="gst"> + GST</span>-->
+                                    </div>
+                                    <!--new price start here
+                                    <div class="newPrice">
+                                        <span class="text-strike"></span>
+                                      <p><span class="rupee">&#x20b9;</span>53,999</p>
+                                      <p class="gst"><span>+ GST</span></p>
+                                    </div>-->
+                                    <!--new price end here-->
+                                  </div>
+                                  <!--package test start here-->
+                                  <div class="packageDetails">
+                                    <h3>Champion</h3>
+                                    <p><span class="rupee">&#x20b9;</span>59,999</p>
+                                    <p class="gst"><span>+ GST</span></p>
+                                  </div>
+                                  <!--package test end here-->
+                                </div>
+                              </div></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="pps-bor basic-package-contents"><p class="lakh-count">Up to 80k</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <!--td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td-->
+                            <td class="pps-bor"><p> Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> 7 B&W or 3 Color </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>2 Weeks</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="bottom-buynow"><!--div class="pps-basic-package-btn"><a class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\''+*{products[3].id}+'\',\''+*{products[3].defaultCategory.id}+'\',\''+*{products[3].defaultSku.retailPrice}+'\');'"><img th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a></div></td-->
+                              <div class="pps-basic-package-btn" th:each="product:${products}" th:if="${product.id==53}">
+                                <!--a class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\'53\',\'2009\',\'59999.00\');'"><img th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a-->
+                                <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                  <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                  </span> <span th:if="${inCart != true}">
+                                  <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'"> <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\'53\',\'2009\',\'59999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCartNew(\'53\',\'2009\',\'53999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> </div>
+                                  </span> </div>
+                              </div></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>2 Samples</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>B&W / Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Up to 25</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>7 B&W or 3 Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>At printing cost</p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>4 Weeks</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> Add-on </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Pay only the ad budget</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Pay only the ad budget</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> Add-on </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>80%</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>60%</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr class="btn-section">
+                            <td class="bottom-buynow"><div class="pps-cost">
+                                <div class="pps-book-cost">
+                                  <div class="pps-books-cost champion">
+                                    <div class="newPrice">
+                                      <p><span class="rupee">&#x20b9;</span>59,999</p>
+                                    </div>
+                                    <p class="gst"><span>+ GST</span></p>
+                                    <div class="oldPrice">
+                                      <p><span class="rupee">&#x20b9;</span>59,999</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="pps-basic-package-btn champion" th:each="product:${products}" th:if="${product.id==53}">
+                                <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                  <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                  </span> <span th:if="${inCart != true}">
+                                  <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'"> <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount2" th:onclick="'javascript:addToCart(\'53\',\'2009\',\'53999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount2" th:onclick="'javascript:addToCartNew(\'53\',\'2009\',\'53999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> </div>
+                                  </span> </div>
+                              </div></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div></td>
+                  <!--Plus package td end here-->
+                  <!--Standard package td start here-->
+                  <td class="standard-package-content"><div class="packagesTableContainer">
+                      <table class="blue standard-package-data">
+                        <thead>
+                          <tr>
+                            <th class="title"> <div class="packageHeaderContent expert">
+                                <div class="packageHeaderTopContent">
+                                  <picture>
+                                    <source type="image/webp" data-srcset="https://www.prowesspub.com/img/web/packages-expert.webp" />
+                                    <source type="image/png" data-srcset="https://www.prowesspub.com/img/packages-expert.png" />
+                                    <img class="lazyload" data-src="https://www.prowesspub.com/img/packages-expert.png" alt="packages-expert" title="packages-expert" /> </picture>
+                                </div>
+                                <div class="packageHeaderMiddleContent">
+                                  <div class="middleTopContent">
+                                    <p>Expert</p>
+                                  </div>
+                                  <div class="middleBottomContent oldPrice">
+                                    <div>
+                                      <p><span class="rupee">&#x20b9;</span> 39,999<p class="gst"><span>+ GST</span></p> </p>
+                                      <!--<p><span class="rupee fs-4">&#x20b9;</span>35,999</p>-->
+                                      <!--<p class="orginal-price"><span class="rupee">&#x20b9;</span>39,999</p><span class="gst"> + GST</span>-->
+                                    </div>
+                                    <!--new price start here
+                                    <div class="newPrice">
+                                      <p><span class="rupee">&#x20b9;</span>35,999</p>
+                                      <p class="gst"><span>+ GST</span></p>
+                                    </div>-->
+                                    <!--new price end here-->
+                                  </div>
+                                  <!--package test start here-->
+                                  <div class="packageDetails">
+                                    <h3>Expert</h3>
+                                    <p><span class="rupee">&#x20b9;</span>35,999</p>
+                                    <p class="gst"><span>+ GST</span></p>
+                                  </div>
+                                  <!--package test end here-->
+                                </div>
+                              </div></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="pps-bor basic-package-contents"><p class="lakh-count">Up to 60k</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> 7 B&W or 3 Color </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Pay only the ad budget</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="bottom-buynow"><!--div class="pps-basic-package-btn"><a class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\''+*{products[2].id}+'\',\''+*{products[2].defaultCategory.id}+'\',\''+*{products[2].defaultSku.retailPrice}+'\');'"><img th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a></div></td-->
+                              <div class="pps-basic-package-btn" th:each="product:${products}" th:if="${product.id==52}">
+                                <!--a class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\'52\',\'2009\',\'39999.00\');'"><img th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a-->
+                                <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                  <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                  </span> <span th:if="${inCart != true}">
+                                  <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
+                                    <!--a class="BuyNow PackageAmount6" th:onclick="'javascript:addToCart(\''+*{products[2].id}+'\',\''+*{products[2].defaultCategory.id}+'\',\''+*{products[2].defaultSku.retailPrice}+'\');'"><picture>
+   <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+   <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+   <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> 
+</picture></a-->
+                                    <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\'52\',\'2009\',\'35999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCartNew(\'52\',\'2009\',\'35999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> </div>
+                                  </span> </div>
+                              </div></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>2 Samples</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>B&W / Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Up to 15</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>7 B&W or 3 Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>At printing cost</p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Pay only the ad budget</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> Add-on </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>80%</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>60%</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr class="btn-section">
+                            <td class="bottom-buynow"><div class="pps-cost">
+                                <div class="pps-book-cost">
+                                  <div class="pps-books-cost expert">
+                                    <div class="newPrice">
+                                      <p><span class="rupee">&#x20b9;</span>39,999</p>
+                                    </div>
+                                    <p class="gst"><span>+ GST</span></p>
+                                    <div class="oldPrice">
+                                      <p><span class="rupee">&#x20b9;</span>39,999</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="pps-basic-package-btn expert" th:each="product:${products}" th:if="${product.id==52}">
+                                <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                  <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                  </span> <span th:if="${inCart != true}">
+                                  <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
+                                    <!--a class="BuyNow PackageAmount6" th:onclick="'javascript:addToCart(\''+*{products[2].id}+'\',\''+*{products[2].defaultCategory.id}+'\',\''+*{products[2].defaultSku.retailPrice}+'\');'"><picture>
+   <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+   <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+   <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> 
+</picture></a-->
+                                    <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount6" th:onclick="'javascript:addToCart(\'52\',\'2009\',\'35999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount6" th:onclick="'javascript:addToCartNew(\'52\',\'2009\',\'35999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> </div>
+                                  </span> </div>
+                              </div></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div></td>
+                  <!--Standard package td end here-->
+                  <!--Premium package td start here-->
+                  <td class="premium-package-content"><div class="packagesTableContainer">
+                      <table class="blue premium-package-data">
+                        <thead style="width:98% !important; max-width:98% !important;">
+                          <tr>
+                            <th class="title"> <div class="packageHeaderContent seasoned">
+                                <div class="packageHeaderTopContent">
+                                  <picture>
+                                    <source type="image/webp" data-srcset="https://www.prowesspub.com/img/web/packages-seasoned.webp" />
+                                    <source type="image/png" data-srcset="https://www.prowesspub.com/img/packages-seasoned.png" />
+                                    <img class="lazyload" data-src="https://www.prowesspub.com/img/packages-seasoned.png" alt="packages-seasoned" title="packages-seasoned" /> </picture>
+                                </div>
+                                <div class="packageHeaderMiddleContent">
+                                  <div class="middleTopContent">
+                                    <p>Seasoned</p>
+                                  </div>
+                                  <div class="middleBottomContent oldPrice">
+                                    <div>
+                                      <p><span class="rupee">&#x20b9;</span>29,999<p class="gst"><span>+ GST</span></p>  </p>
+                                      <!--                                      <p><span class="rupee fs-4">&#x20b9;</span>26,999</p>-->
+                                      <!--<p class="orginal-price"><span class="rupee">&#x20b9;</span>29,999</p><span class="gst"> + GST</span>-->
+                                    
+                                    </div>
+                                    <!--new price start here
+                                    <div class="newPrice">
+                                      <p><span class="rupee">&#x20b9;</span>26,999</p>
+                                      <p class="gst"><span>+ GST</span></p>
+                                    </div>-->
+                                    <!--new price end here-->
+                                  </div>
+                                  <!--package test start here-->
+                                  <div class="packageDetails">
+                                    <h3>Seasoned</h3>
+                                    <p><span class="rupee">&#x20b9;</span>29,999</p>
+                                    <p class="gst"><span>+ GST</span></p>
+                                  </div>
+                                  <!--package test end here-->
+                                </div>
+                              </div></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="pps-bor"><p class="lakh-count">Up to 40k</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> 5 B&W </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="bottom-buynow"><!--div class="pps-basic-package-btn"><a class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\''+*{products[1].id}+'\',\''+*{products[1].defaultCategory.id}+'\',\''+*{products[1].defaultSku.retailPrice}+'\');'"><img th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a></div></td-->
+                              <div class="pps-basic-package-btn" th:each="product:${products}" th:if="${product.id==51}">
+                                <!--a class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\'51\',\'2009\',\'29999.00\');'"><img th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a-->
+                                <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                  <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                  </span> <span th:if="${inCart != true}">
+                                  <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
+                                    <!--a class="BuyNow PackageAmount3" th:onclick="'javascript:addToCart(\''+*{products[1].id}+'\',\''+*{products[1].defaultCategory.id}+'\',\''+*{products[1].defaultSku.retailPrice}+'\');'"><picture>
+   <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+   <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+   <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> 
+</picture></a-->
+                                    <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\'51\',\'2009\',\'26999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCartNew(\'51\',\'2009\',\'26999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> </div>
+                                  </span> </div>
+                              </div></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>2 Samples</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>B/W</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Color</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Up to 10</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bors"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>5 B&W</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>At printing cost</p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <!--tr>
+                          <td class="pps-bor"><p>Add-on</p></td>
+                        </tr-->
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p><span class="packageCheckMark"><i class="ion-checkmark-round"></i></span></p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p><span class="packageCheckMark"><i class="ion-checkmark-round"></i></span></p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>Add-on</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> Add-on </p></td>
+                          </tr>
+                          <tr>
+                            <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>80%</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p>60%</p></td>
+                          </tr>
+                          <tr>
+                            <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                          </tr>
+                          <tr class="btn-section">
+                            <td class="bottom-buynow"><div class="pps-cost">
+                                <div class="pps-book-cost">
+                                  <div class="pps-books-cost seasoned">
+                                    <div class="newPrice">
+                                      <p><span class="rupee">&#x20b9;</span>29,999</p>
+                                    </div>
+                                    <p class="gst"><span>+ GST</span></p>
+                                    <div class="oldPrice">
+                                      <p><span class="rupee">&#x20b9;</span>29,999</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="pps-basic-package-btn" th:each="product:${products}" th:if="${product.id==51}">
+                                <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                  <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                  </span> <span th:if="${inCart != true}">
+                                  <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
+                                    <!--a class="BuyNow PackageAmount3" th:onclick="'javascript:addToCart(\''+*{products[1].id}+'\',\''+*{products[1].defaultCategory.id}+'\',\''+*{products[1].defaultSku.retailPrice}+'\');'"><picture>
+   <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+   <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+   <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> 
+</picture></a-->
+                                    <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount3" th:onclick="'javascript:addToCart(\'51\',\'2009\',\'296999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount3" th:onclick="'javascript:addToCartNew(\'51\',\'2009\',\'26999.00\');'">
+                                    <picture>
+                                      <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                      <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                      <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                    </a> </div>
+                                  </span> </div>
+                              </div></td>
+                          </tr>
+                      </table>
+                    </div></td>
+                  <!--Premium package td end here-->
+                  <!--Fresh man package td start here-->
+                  <td class="freshman-package-content"><table class="blue freshman-package-data">
+                      <thead>
+                        <tr>
+                          <th class="title"> <div class="packageHeaderContent freshman">
+                              <div class="packageHeaderTopContent">
+                                <picture>
+                                  <source type="image/webp" data-srcset="https://www.prowesspub.com/img/web/packages-freshman.webp" />
+                                  <source type="image/png" data-srcset="https://www.prowesspub.com/img/packages-freshman.png" />
+                                  <img class="lazyload" data-src="https://www.prowesspub.com/img/packages-freshman.png" alt="packages-freshman" title="packages-freshman" /> </picture>
+                              </div>
+                              <div class="packageHeaderMiddleContent">
+                                <div class="middleTopContent">
+                                  <p>Freshman</p>
+                                </div>
+                                <div class="middleBottomContent oldPrice">
+                                  <div>
+                                    <p><span class="rupee">&#x20b9;</span>14,999<p class="gst"><span>+ GST</span></p> </p>
+                                      <!--                                    <p><span class="rupee fs-4">&#x20b9;</span>13,499</p>-->
+                                      <!--<p class="orginal-price"><span class="rupee">&#x20b9;</span>14,999</p><span class="gst"> + GST</span>-->
+                                    
+                                  </div>
+                                  <!--new price start here
+                                  <div class="newPrice">
+                                    <p><span class="rupee">&#x20b9;</span>13,499</p>
+                                    <p class="gst"><span>+ GST</span></p>
+                                  </div>-->
+                                  <!--new price end here-->
+                                </div>
+                                <!--package test start here-->
+                                <div class="packageDetails">
+                                  <h3>Freshman</h3>
+                                  <p><span class="rupee">&#x20b9;</span>14,999</p>
+                                  <p class="gst"><span>+ GST</span></p>
+                                </div>
+                                <!--package test end here-->
+                              </div>
+                            </div>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="pps-bors"><p class="lakh-count">Up to 20k</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>3 B&W</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bor"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bor"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bor"><p><span class="packageCheckMark"><i class="ion-checkmark-round"></i></span></p></td>
+                        </tr>
+                        <tr>
+                          <td class="bottom-buynow"><!--div class="pps-basic-package-btn"><a class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\''+*{products[0].id}+'\',\''+*{products[0].defaultCategory.id}+'\',\''+*{products[0].defaultSku.retailPrice}+'\');'"><img th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a></div></td-->
+                            <div class="pps-basic-package-btn" th:each="product:${products}" th:if="${product.id==50}">
+                              <!--a class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\'50\',\'2009\',\'14999.00\');'"><img th:src="@{/img/package-buyNow.png}" alt="package-buyNow" class="buyNow"></a-->
+                              <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                </span> <span th:if="${inCart != true}">
+                                <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
+                                  <!--a class="BuyNow PackageAmount4" th:onclick="'javascript:addToCart(\''+*{products[0].id}+'\',\''+*{products[0].defaultCategory.id}+'\',\''+*{products[0].defaultSku.retailPrice}+'\');'"><picture>
+   <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+   <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+   <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> 
+</picture></a-->
+                                  <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCart(\'50\',\'2009\',\'13499.00\');'">
+                                  <picture>
+                                    <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                    <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                    <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                  </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount1" th:onclick="'javascript:addToCartNew(\'50\',\'2009\',\'13499.00\');'">
+                                  <picture>
+                                    <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                    <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                    <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                  </a> </div>
+                                </span> </div>
+                            </div></td>
+                        </tr>
+                        <tr>
+                          <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bor"><p>1 Sample</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>B/W</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Color</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Up to 5</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> <span class="cross-icon"><i class="ion-close-round"></i></span> </p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr>
+                        <tr>
+                          <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>3 B&W</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>At printing cost</p></td>
+                        </tr>
+                        <!--tr>
+                          <td class="pps-bors"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr-->
+                        <tr>
+                          <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> <span class="cross-icon"><i class="ion-close-round"></i></span> </p></td>
+                        </tr>
+                        <!--tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr-->
+                        <tr>
+                          <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>Add-on</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> Add-on </p></td>
+                        </tr>
+                        <tr>
+                          <td class="header-title"><div class="pps-price-sub-title">&nbsp;</div></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p><span class="packageCheckMark"><i class="ion-checkmark-round"></i></span></p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> <span class="cross-icon"><i class="ion-close-round"></i></span> </p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p>60%</p></td>
+                        </tr>
+                        <tr>
+                          <td class="pps-bors"><p> <span class="packageCheckMark"><i class="ion-checkmark-round"></i></span> </p></td>
+                        </tr>
+                        <tr class="btn-section">
+                          <td class="bottom-buynow"><div class="pps-cost">
+                              <div class="pps-book-cost">
+                                <div class="pps-books-cost freshMan">
+                                  <div class="newPrice">
+                                    <p><span class="rupee">&#x20b9;</span>14,999</p>
+                                  </div>
+                                  <p class="gst"><span>+ GST</span></p>
+                                  <div class="oldPrice">
+                                    <p><span class="rupee">&#x20b9;</span>14,999</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="pps-basic-package-btn" th:each="product:${products}" th:if="${product.id==50}">
+                              <div th:class="*{'productActions' + product.id}"
+				     th:with="checkInventory=*{product.defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
+				              availableInventory=${checkInventory ? #object.product.defaultSku.quantityAvailable != null and #object.product.defaultSku.quantityAvailable != 0 : true},
+				              inCart=${cart.containsSku(#object.product.defaultSku)} and *{#lists.isEmpty(product.productOptions)}"> <span th:if="${inCart == true}">
+                                <div class="in_cart" th:classappend="${!inCart}? ' hidden'"> <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a> </div>
+                                </span> <span th:if="${inCart != true}">
+                                <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
+                                  <!--a class="BuyNow PackageAmount4" th:onclick="'javascript:addToCart(\''+*{products[0].id}+'\',\''+*{products[0].defaultCategory.id}+'\',\''+*{products[0].defaultSku.retailPrice}+'\');'"><picture>
+   <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+   <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+   <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> 
+</picture></a-->
+                                  <a th:if="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount4" th:onclick="'javascript:addToCart(\'50\',\'2009\',\'13499.00\');'">
+                                  <picture>
+                                    <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                    <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                    <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                  </a> <a th:unless="${#lists.isEmpty(cart.orderItems)}" class="BuyNow PackageAmount4" th:onclick="'javascript:addToCartNew(\'50\',\'2009\',\'13499.00\');'">
+                                  <picture>
+                                    <source class="buyNow" type="image/webp" data-srcset="https://www.prowesspub.com/img/web/package-buyNow.webp" />
+                                    <source class="buyNow" type="image/png" data-srcset="https://www.prowesspub.com/img/package-buyNow.png" />
+                                    <img class="buyNow" src="https://www.prowesspub.com/img/package-buyNow.png" alt="package-buyNow" title="package-buyNow" /> </picture>
+                                  </a> </div>
+                                </span> </div>
+                            </div></td>
+                        </tr>
+                    </table></td>
+                  <!--freshman package td end here-->
+                </tr>
+                </tbody>
+                
+              </table>
+            </div>
+            <!--packages table content end here-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--about us content end here-->
+    <!--signup content start here-->
+    <div class="homeSignUpContent book-printing-service-layer">
+      <div class="signUpLayer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="signUpTopContent">
+                <p>Begin your author career. Publish Now</p>
+              </div>
+            </div>
+          </div>
+          <div class="homeSignUpForm">
+            <div class="signUpBird">
+              <picture>
+                <source type="image/webp" data-srcset="https://www.prowesspub.com/img/web/home-signUp-bird.webp" />
+                <source type="image/png" data-srcset="https://www.prowesspub.com/img/home-signUp-bird.png" />
+                <img class="lazyload" data-src="https://www.prowesspub.com/img/home-signUp-bird.png" alt="home-signUp-bird" title="home-signUp-bird" /> </picture>
+            </div>
+            <form id="contact-us-form" action="https://adwords.prowesspub.com/mail.php" method="get">
+              <div class="row">
+                <div class="col-sm-4">
+                  <input type="text" placeholder="NAME" name="name" pattern="[a-zA-Z0-9\s]+" required="required"/>
+                </div>
+                <div class="col-sm-4">
+                  <input type="email" placeholder="EMAIL" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required"/>
+                </div>
+                <div class="col-sm-4">
+                  <input type="text" placeholder="PHONE NUMBER" name="phone" pattern="[6789][0-9]{9}" title="10 digits" required="required"/>
+                  <input type="hidden" placeholder="PHONE NUMBER" name="category" value="Packages" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <input type="submit">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--signup content end here-->
+    <!--main content end here-->
+  </div>
+  </div>
+  <!--footer content start here-->
+  <footer th:replace="layout/partials/prowessfooter"></footer>
+  <!--footer content end here-->
+</section>
+<!--wrapper content end here-->
+<!--login popUp content start here-->
+<!--login popUp content end here-->
+<blc:form method="POST" id="addToCartAfterLogin" th:action="@{/cart/add}" target="hiddenFrame">
+  <input type="hidden" id="productId" name="productId" value="" />
+  <input type="hidden" id="categoryId" name="categoryId" value="" />
+  <input type="hidden" name="quantity" value="1" />
+  <input type="hidden" name="hasProductOptions" th:value="*{!#lists.isEmpty(productOptions)}" />
+</blc:form>
+<iframe name="hiddenFrame" id="hiddenFrame" class="hide"></iframe>
+<!--  order title content start here -->
+<!--div class="modal fade" id="orderTitleContent" tabindex="-1" role="dialog" aria-labelledby="orderTitleContent">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      	<div class="orderTitleData">
+        	<div class="orderTitleDataContent">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+            <h3 th:if="${customer.anonymous}">Please login to place order</h3>
+            <h3 th:unless="${customer.anonymous}">Please enter the order title</h3>
+            	<blc:form id="alacartadd" method="POST" th:action="@{/customerCart}"-->
+<!--input type="hidden" name="productId" id="productId" value="" />
+				                    <input type="hidden" name="categoryId" id="categoryId" value="" />
+				                    <input type="hidden" name="quantity" value="1" />
+				                    <input type="hidden" name="package_name" id="package_name" value="Regular">
+				                    <input type="hidden" name="package_discount" id="package_discount" value="0.00" />
+				                    <input type="hidden" name="package_tax" id="package_tax" value="" />
+				                    <input type="hidden" name="tax_percentage" id="tax_percentage" value="18" />
+				                    <input type="hidden" name="package_total" id="package_total" value="" />
+				                    <input type="hidden" name="customerId" th:if="${customer.anonymous}" value="" />
+				                    <input type="hidden" name="customerId" th:unless="${customer.anonymous}" th:value="${customer.id}" />
+				                    <input type="hidden" name="hasProductOptions" th:value="*{!#lists.isEmpty(productOptions)}" /-->
+<!--input type="submit" class="addToCart BuyNow PackageAmount4" value="buyNow"/-->
+<!--p th:if="${customer.anonymous}"><input type="text" readonly="readonly" placeholder="Please login to place order" class="form-control" name="title"/></p-->
+<!--p th:if="${customer.anonymous}"><a th:href="@{/login(successUrl='/book-publishing-packages.html')}" class="packageLogin">Login</a></p-->
+<!--p th:if="${customer.anonymous}"><a href="#" onclick="logincontent();" class="packageLogin">Login</a></p>
+								  <p th:unless="${customer.anonymous}"><a href="#" onclick="placeorder();" class="packageLogin">Add to Cart</a></p-->
+<!--p th:unless="${customer.anonymous}"><input type="text" placeholder="Order Title" class="form-control" name="title"/></p>
+				                <p th:unless="${customer.anonymous}"><input type="button" onclick="addToCartSubmit();" class="orderTitleSubmit" value="Submit" /></p-->
+<!--/blc:form>
+            </div>
+        </div>
+    </div>
+  </div>
+</div-->
+<div class="modal fade" id="packageLogin" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="model-popUp-Data">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Please login to place order</h4>
+        </div>
+        <blc:form id="alacartadd" method="POST" th:action="@{/customerCart}">
+          <div class="modal-body">
+            <p><a href="#" class="packageLogin" onclick="logincontent('login');">Login</a></p>
+            <div class="newToProwess">
+              <h3><span>New to Prowess?</span></h3>
+            </div>
+            <div class="newUser"><a href="#" onclick="logincontent('register');">Create your Prowess Account</a></div>
+          </div>
+        </blc:form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  order title content end here -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#navPackages').addClass('active');
+		//$("#successUrl").val("/book-publishing-packages.html");
+		$("#successUrl").val("/cart");
+		$("#redirectUrl").val("/cart");
+		});
+		$('#packageLogin .close').click(function(){
+		loadcart();
+			var cartOrderItemId=$('#cartOrderItemId').val();
+			var cartProductId=$('#cartProductId').val();
+			var cartSkuId=$('#cartSkuId').val();
+			$("#cartProductId1").val(cartProductId);
+			$("#cartOrderItemId1").val(cartOrderItemId);
+			$("#cartSkuId1").val(cartSkuId);
+
+			$("#alacartremove").submit();
+
+		});
+		$('.loginContent .close').click(function(){
+		loadcart();
+			var cartOrderItemId=$('#cartOrderItemId').val();
+			var cartProductId=$('#cartProductId').val();
+			var cartSkuId=$('#cartSkuId').val();
+			$("#cartProductId1").val(cartProductId);
+			$("#cartOrderItemId1").val(cartOrderItemId);
+			$("#cartSkuId1").val(cartSkuId);
+
+			$("#alacartremove").submit();
+
+		});
+		function loadcart(){
+if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+    {
+     setTimeout(function () { location.reload(1); }, 1000);
+    }  
+$(".mainContent").fadeOut(1000, function(){
+                            $(".mainContent").load(window.location.href+" .mainContent>*").fadeIn().delay(1000);
+                            //$("#wrapper").load(window.location.href + " #wrapper").fadeIn().delay(1000);
+                        });
+}
+		function logincontent(type){
+			//loadcart();
+			$('body').addClass('fixed');
+			if(type=="login"){
+				$('.loginContent .createAccount').removeClass("active");
+				$('.loginContent .login').addClass("active");
+				$('.loginContent .registerFormData').removeClass("show");
+				$('.loginContent .loginFormData').addClass("show");
+			}else{
+				$('.loginContent .login').removeClass("active");
+				$('.loginContent .createAccount').addClass("active");
+				$('.loginContent .loginFormData').removeClass("show");
+				$('.loginContent .registerFormData').addClass("show");
+			}
+			$('.loginContent').show(1000);
+			$("#addToCartAfterLogin").submit();
+		}
+		function placeorder(){
+			$("#addToCartAfterLogin").removeAttr("target");
+			$("#addToCartAfterLogin").submit();
+			
+		}
+</script>
+</body>
+</html>

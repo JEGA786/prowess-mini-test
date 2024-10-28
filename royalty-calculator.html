@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+  <head layout:fragment="custom-head"><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Royalty Calculator - Book Returns - Prowess Publishing</title>
+<meta name="description" content="Use our Royalty Calculator - which shows how much money you will get on your book. Earn high royalties by publishing your book & ebook. Begin your earnings now">
+<meta name="keywords" content="calculate returns on your book, earn from book publishing, generate revenue from your book, book royalty calculator, royalty calculator for book price, high royalty on book sales, decide book MRP with royalty calculator, calculate profit on book sale">
+
+            <th:block th:include="layout/partials/prowesshead" th:with="hasMetaDesc=${true}"/>
+    </head>
+<script>
+        $(function () {
+            
+            $(".PageCount").change(function () {
+                var Count = parseFloat($(this).val());
+                if (Count < 50 || Count > 500) {
+                    $(this).val("");
+                    alert('Please enter page count value between 50 and 500');
+                }
+            });
+            $(".txtMRP").change(function () {
+                var txtMRP = parseFloat($(this).val());
+                var txtMinimumMRP = parseFloat(document.getElementById("txtMinimumMRP").value);
+                if (txtMinimumMRP > txtMRP) {
+                    $(this).val("");
+                    alert('Please enter valid MRP');
+                }
+            });
+        });
+    </script>
+   <script> 
+    function CalculateMRP() {
+    try {
+        var PageCountLength = document.getElementById("txtPageCount").value.length;
+        if (PageCountLength > 0) {
+            var txtPageCount = parseFloat(document.getElementById("txtPageCount").value);
+            var ddlBinding = document.getElementById("ddlBinding").options[document.getElementById("ddlBinding").selectedIndex].value;
+            var ddlSizeofBook = document.getElementById("ddlSizeofBook").options[document.getElementById("ddlSizeofBook").selectedIndex].value;
+            var txtPrintCost;
+            if (ddlBinding == "1") {
+                if (ddlSizeofBook == "1" || ddlSizeofBook == "2") {
+                    txtPrintCost = ((txtPageCount) * (0.42));
+                    if (txtPageCount <= 200) {
+                        txtPrintCost = (txtPrintCost + 12);
+                    }
+                } else {
+                    txtPrintCost = ((txtPageCount) * (0.62));
+                    if (txtPageCount <= 200) {
+                        txtPrintCost = (txtPrintCost + 20);
+                    }
+                }
+            } else if (ddlBinding == "2") {
+                if (ddlSizeofBook == "1" || ddlSizeofBook == "2") {
+                    txtPrintCost = ((txtPageCount) * (0.46));
+                    if (txtPageCount <= 200) {
+                        txtPrintCost = (txtPrintCost + 12);
+                    }
+                    txtPrintCost = (txtPrintCost + 35);
+                } else {
+                    txtPrintCost = ((txtPageCount) * (0.66));
+                    if (txtPageCount <= 200) {
+                        txtPrintCost = (txtPrintCost + 20);
+                    }
+                    txtPrintCost = (txtPrintCost + 55);
+                }
+            }
+            document.getElementById("txtPrintCost").value = parseFloat(txtPrintCost).toFixed(2);
+            var MinimumMRPCostTimes = 2.50;
+            var txtMinimumMRP;
+            txtMinimumMRP = (MinimumMRPCostTimes * txtPrintCost);
+            document.getElementById("txtMinimumMRP").value = parseFloat(txtMinimumMRP).toFixed(2);
+            document.getElementById("txtMRP").value = '';
+            document.getElementById("lblOtherStores").innerHTML = '';
+            document.getElementById("lblProwessStore").innerHTML = '';
+        } else {
+            document.getElementById("txtPrintCost").value = '';
+            document.getElementById("txtMinimumMRP").value = '';
+            document.getElementById("txtMRP").value = '';
+            document.getElementById("lblOtherStores").innerHTML = '';
+            document.getElementById("lblProwessStore").innerHTML = '';
+            alert("Please enter Minimum MRP");
+            return;
+        }
+    } catch (err) {
+       // top.location.href = '../errorpage.html';
+        return;
+    }
+}
+
+function CalculateRoyalty() {
+    try {
+        var MRPLength = document.getElementById("txtMRP").value.length;
+        if (MRPLength > 0) {
+            var MRP = parseFloat(document.getElementById("txtMRP").value);
+            var txtPrintCost = parseFloat(document.getElementById("txtPrintCost").value);
+            var ProwessStore = (MRP) - (((MRP) * (0.30)) + txtPrintCost);
+            var OtherStores = (MRP) - (((MRP) * (0.50)) + txtPrintCost);
+            lblProwessStore.innerHTML = parseFloat(ProwessStore).toFixed(2);
+            lblOtherStores.innerHTML = parseFloat(OtherStores).toFixed(2);
+        } else {
+            document.getElementById("lblOtherStores").innerHTML = '';
+            document.getElementById("lblProwessStore").innerHTML = '';
+            alert("Please enter MRP");
+            return;
+        }
+    } catch (err) {
+        //top.location.href = '../errorpage.html';
+        return;
+    }
+}
+</script>
+
+<body>
+<!--wrapper content start here-->
+	<section id="wrapper">
+    	<!--header start here-->
+        <header th:replace="layout/partials/prowessheader"></header>
+        <!--header end here-->
+       
+        <!--main content start here-->
+        	<div class="mainContent">
+                <!--Royalty Calculator content start here
+                	<div class="royaltyCalculatorContent">
+                    	<div class="container">
+                        	<div class="row">
+                            	<div class="col-sm-12">
+                                	<div class="topContent"><h2>Royalty Calculator</h2>
+                                    <p>Make profit from passion. Earn high royalty from your books.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                            	<div class="col-md-6">
+                                	<div class="MRP-content">
+                                    <h3>MRP Calculator</h3>
+                                    	<div class="formContent"> 
+                                        	
+                                            <div class="form-group">
+                                               <label for="NumberofPages">Number of Pages:</label>
+                                               <input type="text" class="form-control" name="PageCount" id="txtPageCount">
+                                             </div>
+                                             <div class="form-group">
+                                               <label for="SizeofBook">Size of BooK:</label>
+                                               <select class="form-control" id="ddlSizeofBook">
+                                                  <option value="1">5" x 8"</option>
+                                                  <option value="2">6" x 9" </option>
+                                                  <option value="3">8.5" x 11" </option>
+                                                </select>
+                                             </div>
+                                             <div class="form-group">
+                                               <label for="Binding">Binding:</label>
+                                                <select class="form-control" id="ddlBinding">
+                                                  <option value="1">Paperback </option>
+                                                  <option value="2">Hardcase </option>
+                                                </select>
+                                             </div>
+                                             <div class="form-group">
+                                               <label for="Print Cost">Print Cost:</label>
+                                               <input type="text" name="PrintCost" id="txtPrintCost" class="form-control" disabled="true">
+                                             </div>
+                                             <div class="submitContent"><button type="submit" class="btn btn-default" onclick="CalculateMRP()">Calculate MRP</button></div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                <div class="authorRoyaltyCalculator">
+                                <h3>Author Royalty Calculator</h3>
+                                    	<div class="formContent"> 
+                                        	
+                                            <div class="form-group">
+                                               <label for="NumberofPages">Minimum MRPs:</label>
+                                               <input type="text"  name="MinimumMRP" id="txtMinimumMRP" class="form-control" disabled="true">
+                                             </div>
+                                             <div class="form-group">
+                                               <label for="SizeofBook">MRP:</label>
+                                               <input type="text" class="form-control txtMRP" name="MRP" id="txtMRP">
+                                             </div>
+                                             <div class="form-group">
+                                               <label for="Binding" >Other Stores:<span id="lblOtherStores"/></label>
+                                              <span class="other-stores"></span>
+                                             </div>
+                                             <div class="form-group">
+                                               <label for="Print Cost" >Prowess Store:<span id="lblProwessStore"/></label>
+                                               <span class="prowess-stores"></span>
+                                             </div>
+                                             <div class="submitContent"><button type="submit" class="btn btn-default"  onclick="CalculateRoyalty()">Calculate Royalty</button></div>
+                                         
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                            	<div class="col-md-12">
+                                	<div class="royaltyCalculatorQuestions">
+                                	<h2>Frequently Asked Questions</h2>
+                                    <ul>
+                                    	<li>
+                                        	<h4>What is Minimum MRP?</h4>
+                                            <p>The minimum MRP is the least you can set for your book. This is calculated based on the printing and distribution cost.</p>
+                                        </li>
+                                        <li>
+                                        	<h4>Is my royalty higher if the book is sold through Prowess store?</h4>
+                                            <p>Yes, you will earn higher royalty amount when a book is sold directly from Prowess store because the distribution cost will only be 30% of the MRP and not 50% unlike other eCommerce stores.</p>
+                                        </li>
+                                        <li>
+                                        	<h4>How do I fix the MRP?</h4>
+                                            <p>Before setting the price of the book, research other books of the same genre in ecommerce platforms. You can make a big mistake by setting a high MRP which will make you stand alone. Once you have finalized with the book size, book format and total number of pages, we will be able to guide you the best price for your book.</p>
+                                        </li>
+                                        <li>
+                                        	<h4>How is royalty calculated?</h4>
+                                            <p>Profit is calculated as the difference between the MRP and expenses incurred on the book. Profit = MRP - Expenses (Production Cost + Distribution Cost).</p>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--Royalty Calculator content end here-->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        <!--main content end here-->
+        <!--footer content start here-->
+        <footer th:replace="layout/partials/prowessfooter"></footer>
+        <!--footer content end here-->
+    </section>
+<!--wrapper content end here-->
+<!--login popUp content start here-->
+	<!--login popUp content end here-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#navRoyalty').addClass('active');
+		
+		});
+</script>
+</body>
+</html>
