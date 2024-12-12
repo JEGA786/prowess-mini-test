@@ -1,0 +1,538 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publish And Promote Your Book - Prowess Publishing</title>
+    <meta name="description"
+        content="Thank you for your interest in book publishing and promotion. We have our own production unit with a dedicated team for book editing, printing, and marketing.">
+    <meta name="keywords"
+        content="contact us for book publishing, book publishing and promotion, best book publishing, publish and promote your book, publishing in Hyderabad, book publishers in Hyderabad, book printing in India, book publishers near me, book publishers in my area, book publishing in Hyderabad">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Bootstrap JS and AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <style>
+        :root {
+            --main-color-one: #64e3fc;
+            --main-color-two: #aef8fc;
+            --secondary-color: #e490fd;
+            --heading-color: #e61bfd;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth !important;
+            scroll-padding: 100px !important;
+        }
+
+        html {
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-fullscreen-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .video-fullscreen-wrap[data-overlay-dark="5"]::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(81, 80, 80, 0.578);
+            z-index: 1;
+        }
+
+        .video-fullscreen-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .v-middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .heading-h1 {
+            font-size: 75px;
+            font-weight: 600;
+        }
+
+        .heading-h6 {
+            margin-top: 40px;
+            font-weight: 600;
+            font-size: 35px !important;
+            letter-spacing: 2px !important;
+        }
+
+        .heading-h4 {
+            margin-top: 40px;
+            font-weight: 600;
+            font-size: 24px !important;
+            letter-spacing: 1px !important;
+        }
+
+        .pragraph {
+            font-size: 16px;
+            line-height: 30px;
+            color: #2c2b2b;
+        }
+
+        .main-btn {
+            background: var(--main-color-two);
+            padding: 11px;
+            border-radius: 5px;
+            min-width: 200px;
+            border: none;
+            transition: all 0.5s ease-in-out;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        .main-btn:hover {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            background: var(--main-color-one);
+        }
+
+
+
+        /* -------------------------------------- */
+
+        section {
+            background-image: linear-gradient(to top left, rgb(210, 144, 249), rgb(166, 217, 253))
+        }
+
+        .event-img {
+            width: 450px;
+            height: 500px;
+            border-radius: 0 100px 0 0px !important;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            overflow: hidden;
+        }
+
+        .event-img img {
+            object-fit: cover !important;
+        }
+
+        /* ------------------------------- */
+
+        .awards {
+            width: 430px;
+            height: 600px;
+            border-radius: 0 70px 0 70px !important;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .awards:hover {
+            transform: translateY(-10px);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+        }
+
+        .bg-danger {
+            height: 300px;
+        }
+
+        .awards-img {
+            height: 300px;
+            border-radius: 0 70px 0 0px !important;
+        }
+
+        .awards-img-1 {
+            height: 340px;
+            border-radius: 0 70px 0 0px !important;
+        }
+
+        .awards-img-1 img {
+            height: 340px;
+            border-radius: 0 70px 0 0px !important;
+            border: 2px solid rgb(202, 202, 202);
+        }
+
+
+        .learn-more-btn {
+            background: transparent;
+            border: solid var(--main-color-one) 0.9px;
+            padding: 7px;
+            border-radius: 5px;
+            min-width: 120px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .learn-more-btn:hover {
+             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            background: var(--main-color-one);
+        }
+
+
+
+        /* -------------------------------------------------------------- */
+
+
+        .upcoming-events {
+            text-align: center;
+        }
+
+        /* Slider container */
+        .slider-container {
+            width: 90%;
+            /* Responsive width */
+            max-width: 1003px;
+            /* Limit maximum width */
+            height: 374px;
+            overflow: hidden;
+            position: relative;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Slider */
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Individual slide */
+        .slide {
+            flex: 0 0 100%;
+            /* Responsive width */
+            height: 374px;
+            /* height: 280px; */
+            position: relative;
+
+        }
+
+
+        /* Slide images */
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.8s ease-in-out !important;
+        }
+
+        .slide:hover img {
+            transform: scale(1.07);
+        }
+
+        /* Learn More Button Styling */
+        .see-more-btn {
+            position: absolute;
+            bottom: 30px;
+            background: var(--main-color-one);
+            border: solid var(--main-color-one) 0.9px;
+            padding: 7px 10px 7px 10px;
+            border-radius: 5px;
+            min-width: 120px;
+            transition: all 0.5s ease-in-out;
+
+
+        }
+
+          .see-more-btn:hover {
+            color: #ffff !important;
+            background: transparent;
+        }
+
+        /* Pagination */
+        .pagination {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .pagination-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #706e6e;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination-dot.active {
+            background-color: #7ca23f;
+        }
+
+        /* Media Queries for smaller screens */
+        @media (max-width: 768px) {
+            .slider-container {
+                height: 200px;
+            }
+
+            .slide {
+                height: 200px;
+            }
+
+            .learn-more-btn {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-container {
+                height: 200px;
+            }
+
+            .slide {
+                height: 200px;
+            }
+
+            .learn-more-btn {
+                font-size: 10px;
+                padding: 6px 12px;
+            }
+
+            .pagination-dot {
+                width: 6px;
+                height: 6px;
+            }
+            .event-img {
+    width: 367px;
+    height: 446px;
+    border-radius: 0 100px 0 0px !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    overflow: hidden;
+}
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with Video -->
+    <header class="header">
+        <div class="video-fullscreen-wrap" data-overlay-dark="5">
+            <video class="video-fullscreen-video" playsinline autoplay loop muted>
+                <source src="/videos/AdobeStock_596230778.mov" type="video/webm" />
+                <source src="/videos/AdobeStock_432387493.mov" type="video/mp4" />
+            </video>
+        </div>
+        <div class="v-middle col-11">
+            <div class="container">
+                <div class="row">
+                    <div data-aos="fade-up" class="col-12 text-start d-flex flex-column justify-content-center align-items-center">
+                        <h1  class="text-center  heading-h1">Events with Prowess</h1>
+                        <p  class="text-center pragraph text-white">Discover our exciting events, from awards to book
+                            fairs, fostering creativity and connection.</p>
+                        <a href="#about-events" data-aos="zoom-in-down" ><button class="main-btn">Explore</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="about-events" class="min-vh-100 about-events d-flex justify-content-center align-items-center ">
+
+        <div class="row d-flex gap-lg-0 gap-5 p-0 m-0 justify-content-center align-items-center ">
+            <div class="col-lg-6 col-12  d-flex flex-column justify-content-center align-items-center ">
+                <div  class="col-lg-9 col-12 ">
+                    <h6 data-aos="fade-up"  class="heading-h6">Brief About Events</h6>
+                    <p  data-aos="fade-up" class="pragraph">News write-ups offer a great way to let clients know about new products and
+                        services, events, awards, and more. News write-ups offer a great way to let clients know about
+                        new products and services, events, awards, and more.</p>
+                    <a href=""><button  data-aos="zoom-in-down" class="main-btn">Explore</button></a>
+                </div>
+            </div>
+            <div class="mb-lg-0 mb-5 col-lg-6 col-12 d-flex justify-content-center align-items-center">
+                <div class="event-img bg-white"  data-aos="zoom-in-up">
+                    <img class="img-fluid w-100 h-100" src="/images/street-market-sunset.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="about-events  p-lg-5 p-0 min-vh-100  ">
+
+        <div class="h-100 row d-flex p-0 m-0 justify-content-center align-items-center ">
+           
+            <h6 class="text-center mt-lg-4 heading-h6" data-aos="fade-up">Featured Events</h6>
+           
+           <div class="featured-events d-flex mt-5  justify-content-around col-12 flex-wrap">
+    <div data-aos="zoom-in-up" class="awards bg-white d-flex flex-column  align-items-center p-0 m-0">
+         <div class="bg-info  awards-img-1  overflow-hidden" >
+            <img class="img-fluid w-100 h-100" src="/images/street-market-sunset.jpg" alt="">
+       
+         </div> 
+         <div data-aos="fade-up" class="awards-content text-center d-flex flex-column justify-content-start gap-2 align-items-center">
+            <h4 class="fw-bold mt-4 text-center col-10 heading-h4">Prowess Publishing Best Author Awards</h6> 
+    <p class="col-10 text-center">High class, high quality phones at affordable prices</p>
+    <a href="" class="learn-more-btn">Learn More</a></div>
+    </div>
+    <div data-aos="zoom-in-up" class="awards bg-white d-flex flex-column  align-items-center p-2 mt-lg-1 mt-4">
+        <div  class="bg-danger col-10 awards-img mt-3 overflow-hidden">
+            <img class="img-fluid w-100 h-100" src="/images/street-market-sunset.jpg" alt="">
+        </div>
+        <div data-aos="zoom-in-up" class="awards-content text-center d-flex flex-column justify-content-start gap-2 align-items-center">
+           <h4 class="fw-bold mt-4 text-center col-10 heading-h4">Book Fair</h6> 
+    <p class="col-10 text-center">All your desktop or laptop needs made available</p>
+       <a href="" class="learn-more-btn">Learn More</a></div>
+    </div>
+            
+    
+           </div>
+        
+        </section>
+    
+    
+        <section class="upcoming-events gap-5  min-vh-100 d-flex p-0 m-0 flex-column justify-content-center align-items-center ">
+            <h6 data-aos="fade-up" class="text-center heading-h6">Upcoming Events</h6>
+            <div data-aos="zoom-in-up" class="slider-container"  id="slider-container">
+                <div class="slider" id="slider">
+                    <!-- Original Slides -->
+                    <div class="slide d-flex justify-content-center align-items-center">
+                        <img src="/images/street-market-sunset.jpg" alt="Event 1">
+                        <a href="" class="see-more-btn text-dark">Explore Blog</a>
+                    </div>
+                    <div class="slide d-flex justify-content-center align-items-center">
+                        <img src="/images/street-market-sunset.jpg" alt="Event 2">
+                        <a href="" class="see-more-btn text-dark">Explore News</a>
+                    </div>
+                    <div class="slide d-flex justify-content-center align-items-center">
+                        <img src="/images/street-market-sunset.jpg" alt="Event 3">
+                       <a href="" class="see-more-btn text-dark">Explore Books</a>
+                    </div>
+                    <!-- <div class="slide">
+                        <img src="/images/street-market-sunset.jpg" alt="Event 4">
+                        <div class="learn-more-btn">Learn More</div>
+                    </div> -->
+                </div>
+                <!-- Pagination -->
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </section>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 2500,
+            once: true,
+        });
+    </script>
+
+
+    <script>
+        const slider = document.getElementById("slider");
+        const slides = Array.from(slider.children);
+        const pagination = document.getElementById("pagination");
+        const sliderContainer = document.getElementById("slider-container");
+        let currentIndex = 0;
+
+        // Clone first and last slides for infinite loop
+        const firstSlide = slides[0].cloneNode(true);
+        const lastSlide = slides[slides.length - 1].cloneNode(true);
+        slider.appendChild(firstSlide);
+        slider.insertBefore(lastSlide, slides[0]);
+
+        // Update slides after cloning
+        const allSlides = Array.from(slider.children);
+
+        // Set initial slider position to the first slide
+        let slideWidth = sliderContainer.offsetWidth;
+        slider.style.transform = `translateX(-${slideWidth}px)`;
+
+        // Create pagination dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement("div");
+            dot.classList.add("pagination-dot");
+            if (index === 0) dot.classList.add("active");
+            dot.dataset.index = index;
+            dot.addEventListener("click", () => goToSlide(index));
+            pagination.appendChild(dot);
+        });
+
+        // Start auto-slide
+        let autoSlide = setInterval(() => moveToNextSlide(), 1000);
+
+        // Pause slider on hover
+        sliderContainer.addEventListener("mouseenter", () => clearInterval(autoSlide));
+        sliderContainer.addEventListener("mouseleave", () => {
+            autoSlide = setInterval(() => moveToNextSlide(), 1000);
+        });
+
+        // Move to the next slide
+        function moveToNextSlide() {
+            currentIndex++;
+            slider.style.transition = "transform 0.5s ease-in-out";
+            slider.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+
+            if (currentIndex >= slides.length) {
+                setTimeout(() => {
+                    slider.style.transition = "none";
+                    currentIndex = 0;
+                    slider.style.transform = `translateX(-${slideWidth}px)`;
+                }, 500); // Match transition duration
+            }
+            updatePagination();
+        }
+
+        // Move to a specific slide
+        function goToSlide(index) {
+            currentIndex = index;
+            slider.style.transition = "transform 0.5s ease-in-out";
+            slider.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+            updatePagination();
+        }
+
+        // Update pagination dots
+        function updatePagination() {
+            const dots = document.querySelectorAll(".pagination-dot");
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentIndex);
+            });
+        }
+
+        // Adjust slider on window resize
+        window.addEventListener("resize", () => {
+            slideWidth = sliderContainer.offsetWidth;
+            slider.style.transition = "none";
+            slider.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+        });
+    </script>
+</body>
+
+</html>

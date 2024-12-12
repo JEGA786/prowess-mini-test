@@ -17,10 +17,18 @@
           ---primary-color-dark:#fc613a;
           ---sec-color:#115e9d;
         }
-        
+    body{
+  overflow-y: scroll !important;
+  scroll-behavior: smooth !important;
+  scroll-padding: 100px !important;
+}
+        a{
+          text-decoration: none !important;
+          
+        }
         .top-img{
-            background-image: url(images/13194955_15Z_2102.w023.n001.100B.p1.100.jpg);
-            background-size:cover;
+            background-image: url(images/Banner.png);
+            background-size:cover !important;
             height: 70vh;
         }
         .heading-text{
@@ -52,31 +60,42 @@
         }
         
         .see-book{
+         
           height: 40px;
           min-width: 50px;
           border-radius: 5px;
-          background: transparent;
-          border:1px solid var(---primary-color-dark) !important;
+          border: none;
+          background-color: #ff7b59;
           transition: all 0.5s ease-in-out;
         }
         .see-book:hover{
-          background-color: #ff7b59;
+          border:1px solid var(---primary-color-dark) !important;
+          background: transparent;
         }
-         img{
+        .author-img ,.aim-img{
           border-radius: 10px;
           box-shadow: rgba(17, 17, 26, 0.045) 0px 1px 0px, rgba(17, 17, 26, 0.067) 0px 8px 24px, rgba(17, 17, 26, 0.018) 0px 16px 48px;
          }
         h2{
           color: var(---primary-color);
         }
-              
+         h4{
+          font-size: 22px;
+         }     
         .palce{
           color: var(---primary-color-dark);
         }
         
         
-        
-        
+        .author-img{
+         
+          width: 200px;
+        }
+        .see-book{
+        height:40px ;
+          min-width:100px;
+        }
+
         </style>
         
 </head>
@@ -96,11 +115,12 @@
             <div class="container d-flex justify-content-start align-items-center">
             <p class=" text-dark p-0 m-0 fs-5">Share this content</P> 
             <div class="social-icons  d-flex px-4  justify-content-around align-items-center">
-            <a href="#" class=" mx-1"><i class="fs-3 fa-brands fa-facebook"></i></a>
-            <a href="#" class=" mx-2"><i class="fs-3 fa-brands fa-square-instagram"></i>
-            <a href="#" class=" mx-2"><i class="fs-3 fa-brands fa-linkedin"></i></a>
-            <a href="#" class=" mx-2"><i class="fs-3 fa-brands fa-pinterest"></i></a>
-            <a href="#" class=" mx-2"><i class="fs-3 fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/prowesspublishing" class=" mx-1"><i class="fs-3 fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/prowesspublishing/?hl=en" class=" mx-2"><i class="fs-3 fa-brands fa-square-instagram"></i>
+            <a href="https://www.linkedin.com/company/prowess-publishing-&-software-solutions" class=" mx-2"><i class="fs-3 fa-brands fa-linkedin"></i></a>
+            <a href="https://in.pinterest.com/prowesspublishing/" class=" mx-2"><i class="fs-3 fa-brands fa-pinterest"></i></a>
+            <a href="https://www.youtube.com/channel/UCJ1oXigyQKcHee6HqSbQ2sw" class=" mx-2"><i class="fs-3 fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2FProwesspub" class=" mx-2"><i class="fs-3 fa-brands fa-x-twitter"></i></a>
           </div>
           </div>
         
@@ -150,7 +170,7 @@
         <div class="row  d-flex justify-content-around  align-items-satrt ">
             
           <div class="col-md-6 " data-aos="fade-right">
-            <img src="/images/man-standing-ladder-with-star-it-star-him.jpg" alt="Emerald Awards Literati Logo" class="img-fluid">
+            <img src="/images/aim of the award.png" alt="Emerald Awards Literati Logo" class="aim-img img-fluid">
         </div>
             
             <div class="col-md-5 mt-lg-0 mt-4" data-aos="fade-left">
@@ -210,112 +230,11 @@ world.</p></div>
 </section> -->
 
 <section class="awards-section mt-4">
-    <div class="container ">
-        <div class="row p-0 m-0 align-items-start  justify-content-between">
+  <div class="container" id="authorContainer">
+      <!-- Dynamic author profiles will be inserted here -->
+  </div>
+</section>
 
-          <div class=" col-lg-4 text-center justify-content-between " data-aos="fade-right">
-             
-            <img src="/images/R.V. Reddy.png" alt="Emerald Awards Literati Logo" class="img-fluid">
-        </div>
-
-          <div class="col-lg-7 col-12  mt-4 mt-lg-0 mt-md-0" data-aos="fade-left">
-              <h4 class="" data-aos="fade-down"> R.V. Reddy - <span class="palce">1st Place</span> <i class="fa-duotone fa-solid fa-trophy fa-beat-fade text-warning"></i> </h4>
-                <h4 class="">Book Title : Go Bharat</h4>
-               <p class="paragraph-text mt-3">
-                <strong> R.V. Reddy </strong>is a distinguished advocate practicing at the Supreme Court of India, recognized for his passion for yoga, literature, and nature. He has served as Past President of both Lions and Rotary clubs and is currently the President of the Association of British Scholars, drawing inspiration from his father, an award-winning short story writer.  
-              </p>
-               <p class="paragraph-text">He completed a diploma in Creative Writing from IGNOU in 1989, honing his craft under the mentorship of esteemed figures like Prof. Shiv K. Kumar and Geethika Saigal. An avid reader, he is inspired by works such as Stephen King’s On Writing and remains a devoted fan of Ruskin Bond, reflecting a blend of creativity and discipline in all his endeavors.</p>
-               <button class="see-book " data-aos="fade-up">See My book</button>
-            </div>
-        </div>
-
-        
-    </div>
-    <div class="container mt-5">
-        <div class="row p-0 m-0 align-items-start  justify-content-between">
-
-          <div class="col-lg-4 text-center justify-content-between " data-aos="fade-right">
-             
-            <img src="/images/Dr.Kumaresan.png" alt="Emerald Awards Literati Logo" class="img-fluid">
-        </div>
-
-          <div class="col-lg-7 col-12  mt-4 mt-lg-0 mt-md-0" data-aos="fade-left">
-              <h4 class="" data-aos="fade-down"> Dr.Kumaresan - <span class="palce">2nd Place</span> <i class="fa-duotone fa-solid fa-trophy fa-beat-fade text-warning"></i></h4>
-                <h4 class="">Book Title : Umar For Puberphonia</h4>
-               <p class="paragraph-text mt-3"><strong>Dr. Muthiah Kumaresan</strong>  is a renowned ENT surgeon, President of the Paediatric ENT Association of India, and a retired Civil Surgeon. He has served as a specialist for Indian Airlines and the International Airport Authority, and is a distinguished member of the Pulitzers Society, USA, with numerous national and state awards to his credit.</p>
-               <p class="paragraph-text">He earned his MBBS, DLO, and M.S. (ENT) from Madras Medical College in 1974 and developed an innovative evaluation model for puberphonia, rooted in responsive constructivism. Dr. Kumaresan has contributed extensively to community health through voice care camps, 36 published books, articles, and social media outreach.</p>
-               <button class="see-book " data-aos="fade-up">See My book</button>
-              </div>
-        </div>
-
-        
-    </div>
-    <div class="container mt-5">
-        <div class="row p-0 m-0 align-items-start  justify-content-between">
-
-          <div class="col-lg-4 text-center justify-content-between " data-aos="fade-right">
-             
-            <img src="/images/Cina KS.png" alt="Emerald Awards Literati Logo" class="img-fluid">
-        </div>
-
-          <div class="col-lg-7 col-12  mt-4 mt-lg-0 mt-md-0" data-aos="fade-left">
-              <h4 class="" data-aos="fade-down">Cina KS -<span class="palce"> 3nd Place</span> <i class="fa-duotone fa-solid fa-trophy fa-beat-fade text-warning"></i></h4>
-                <h4 class="">Book Title : Winter Hues</h4>
-               <p class="paragraph-text"><strong>Cina K S</strong>
-                , originally from Kerala and now settled in Bangalore, is a dynamic professional with a unique career journey. She transitioned from a background in Electrical and Electronics Engineering to over 23 years of experience in the animation and VFX industry, making significant contributions to both Hollywood and Indian cinema. Her technical expertise and leadership have been instrumental in various high-profile international projects.</p>
-               <p class="paragraph-text">
-                Beyond her work in animation and VFX, Cina is an award-winning screenplay writer and artist, showcasing her creativity across various mediums. Her passion for classical dance offers her both inspiration and solace. Cina's diverse talents beautifully blend technical expertise with artistic expression, making her a truly multifaceted personality.</p>
-               <button class="see-book " data-aos="fade-up">See My book</button>
-              </div>
-        </div>
-
-        
-    </div>
-    <div class="container mt-5">
-        <div class="row p-0 m-0 align-items-center  justify-content-between">
-
-          <div class="col-lg-4 text-center justify-content-between " data-aos="fade-right">
-             
-            <img src="/images/Arul Pandi.png" alt="Emerald Awards Literati Logo" class="img-fluid">
-        </div>
-
-          <div class="col-lg-7 col-12  mt-4 mt-lg-0 mt-md-0" data-aos="fade-left">
-              <h4 class="" data-aos="fade-down">Arul Pandi - <span class="palce">4th Place</span> <i class="fa-duotone fa-solid fa-trophy fa-beat-fade text-warning"></i></h4>
-                <h4 class="">Book Title : Opt To Options Trading After Reading These Pages</h4>
-               <p class="paragraph-text mt-3"><strong>Mr. P. Arul Pandi</strong> is a seasoned professional with over 30 years of experience in the financial sector, having served as an executive at a leading Government of India-owned bank. His deep passion for the financial markets and mastery of various technical trading tools have made him a respected figure in the trading community.</p>
-               <p class="paragraph-text">Inspired by a desire to share his knowledge, Mr. Pandi transitioned into writing, with his debut book Don't Trade Before Learning These 14 Candlestick Patterns becoming a bestseller on Amazon. His books provide practical, accessible insights for traders of all levels, and he actively conducts workshops and seminars to guide others in enhancing their trading skills.
-
-                With a commitment to empowering traders, Mr. P. Arul Pandi continues to inspire individuals through his writings and teachings, offering them the tools and confidence to navigate the complexities of financial markets.</p>
-               <button class="see-book " data-aos="fade-up">See My book</button>
-              </div>
-        </div>
-
-        
-    </div>
-    <div class="container mt-5">
-        <div class="row p-0 m-0 align-items-center  justify-content-between">
-
-          <div class="col-lg-4 text-center justify-content-between " data-aos="fade-right">
-             
-            <img src="/images/Dr.Bijoy Chandra Ghosh.png" alt="Emerald Awards Literati Logo" class="img-fluid">
-        </div>
-
-          <div class="col-lg-7 col-12  mt-4 mt-lg-0 mt-md-0" data-aos="fade-left">
-              <h4 class="" data-aos="fade-down">Bijoy Chandra Ghosh - <span class="palce">5th Place</span> <i class="fa-duotone fa-solid fa-trophy fa-beat-fade text-warning"></i></h4>
-                <h4 class="">Book Title : Principles and Practices of Organic Farming and Quality Food
-                  Production</h4>
-               <p class="paragraph-text mt-3"><strong>Dr. Bijoy Chandra Ghosh</strong>, a retired professor from the Indian Institute of Technology, Kharagpur, has had a distinguished career in agricultural research. His pioneering work has significantly advanced the understanding of organic farming and soil health, particularly highlighting the detrimental effects of chemical farming on the environment. With 185 research papers published in national and international journals, he has made a substantial contribution to sustainable agriculture.</p>
-               <p class="paragraph-text">Dr. Ghosh has supervised 18 Ph.D. students and developed numerous entrepreneurs in composting and vermicomposting. His expertise spans tea cultivation, rooftop gardening, and crop diversification, and he has traveled extensively to share his knowledge with the global agricultural community.</p>
-               <button class="see-book " data-aos="fade-up">See My book</button>
-              </div>
-        </div>
-
-        
-    </div>
-    
-  
-    
-</section> 
 
 
   
@@ -336,19 +255,19 @@ world.</p></div>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h5>1. The aim of the awards</h5>
+                            <h5 class="fw-bold ">1. The aim of the awards</h5>
                             <p class="paragraph-text">The Prowess Publishing Best Author Awards celebrate exceptional talent and creativity in the literary community.</p> 
 
-                            <h5 class="mt-3">2. Submission Guidelines</h5>
+                            <h5 class="fw-bold mt-3">2. Submission Guidelines</h5>
                             <p class="paragraph-text">Entries must be submitted within the specified deadline to be considered for the awards. Each author can submit multiple books; however, each book must be submitted separately. All entries must be complete, including the submission of all required materials and information.</p>
                             
-                            <h5 class="mt-3">3. Judging Process</h5>
+                            <h5 class="fw-bold mt-3">3. Judging Process</h5>
                             <p class="paragraph-text">The judging panel consists of experienced professionals in the publishing industry. Books will be evaluated based on criteria such as originality, writing quality, creativity, and overall impact. The judges' decisions are final and cannot be challenged or appealed.</p>
                             
-                            <h5 class="mt-3">4. Nomination and Selection</h5>
+                            <h5 class="fw-bold mt-3">4. Nomination and Selection</h5>
                             <p class="paragraph-text">Shortlisted nominees will be announced before the awards ceremony. Winners will be selected from the pool of nominees and announced during the awards event. Prowess Publishing reserves the right to withhold any award category if the entries do not meet the required standards.</p>
                             
-                            <h5 class="mt-3">5. Prizes and Benefits</h5>
+                            <h5 class="fw-bold mt-3">5. Prizes and Benefits</h5>
                             <p class="paragraph-text">Winners will receive a certificate, trophy, and promotional benefits, as specified by Prowess Publishing. Prizes are non-transferable and cannot be exchanged for cash or other products.</p>
                         </div>
                     </div>
@@ -366,16 +285,16 @@ world.</p></div>
                             <h5>1. Who is eligible to participate in the Prowess Publishing Best Author Awards?</h5>
                             <p class="paragraph-text">The awards are open to authors who have published their books with Prowess Publishing. Entries must be original works by the participating author, and the books should have been published within the specified eligibility period.</p>
                             
-                            <h5 class="mt-3">2. How can I submit my book for the awards?</h5>
+                            <h5 class="fw-bold mt-3">2. How can I submit my book for the awards?</h5>
                             <p class="paragraph-text">To submit your book, visit the official Prowess Publishing Best Author Awards submission page, fill out the entry form, and upload a digital copy of your book along with the required details.</p>
                             
-                            <h5 class="mt-3">3. When will the winners be announced?</h5>
+                            <h5 class="fw-bold mt-3">3. When will the winners be announced?</h5>
                             <p class="paragraph-text">The winners will be announced during the awards ceremony, which will be held at a date specified on the Prowess Publishing website. Shortlisted authors will be notified in advance.</p>
                             
-                            <h5 class="mt-3">4. Can I enter multiple books?</h5>
+                            <h5 class="fw-bold mt-3">4. Can I enter multiple books?</h5>
                             <p class="paragraph-text">Yes, authors may submit multiple books. However, each book must be entered separately with individual entry forms and submission fees (if applicable).</p>
                             
-                            <h5 class="mt-3">5. How are the winners selected?</h5>
+                            <h5 class="fw-bold mt-3">5. How are the winners selected?</h5>
                             <p class="paragraph-text">The judging panel evaluates all entries based on established criteria, including originality, writing quality, and overall impact. The process is thorough, and decisions made by the judges are final.</p>
                         </div>
                     </div>
@@ -395,6 +314,115 @@ world.</p></div>
             mirror: false
         });
     </script>
+<script>
+  // Author data array
+  const authors = [
+      {
+          name: "R.V. Reddy",
+          place: "1st Place",
+          bookTitle: "Go Bharat",
+          image: "/images/R.V. Reddy.png",
+          intro: " is a distinguished advocate practicing at the Supreme Court of India, recognized for his passion for yoga, literature, and nature. He has served as Past President of both Lions and Rotary clubs and is currently the President of the Association of British Scholars, drawing inspiration from his father, an award-winning short story writer.",
+          fullText: "He completed a diploma in Creative Writing from IGNOU in 1989, honing his craft under the mentorship of esteemed figures like Prof. Shiv K. Kumar and Geethika Saigal. An avid reader, he is inspired by works such as Stephen King’s On Writing and remains a devoted fan of Ruskin Bond, reflecting a blend of creativity and discipline in all his endeavors."
+      },
+      {
+          name: "Dr. Kumaresan",
+          place: "2nd Place",
+          bookTitle: "Umar For Puberphonia",
+          image: "/images/Dr.Kumaresan.png",
+          intro: "is a renowned ENT surgeon, President of the Paediatric ENT Association of India, and a retired Civil Surgeon. He has served as a specialist for Indian Airlines and the International Airport Authority, and is a distinguished member of the Pulitzers Society, USA, with numerous national and state awards to his credit.",
+          fullText: "He earned his MBBS, DLO, and M.S. (ENT) from Madras Medical College in 1974 and developed an innovative evaluation model for puberphonia, rooted in responsive constructivism. Dr. Kumaresan has contributed extensively to community health through voice care camps, 36 published books, articles, and social media outreach."
+      },
+      {
+          name: "Cina KS",
+          place: "3rd Place",
+          bookTitle: "Winter Hues",
+          image: "/images/Cina KS.png",
+          intro: ", originally from Kerala and now settled in Bangalore, is a seasoned professional with over 23 years of experience in animation and VFX, contributing to both Hollywood and Indian cinema. She transitioned from Electrical and Electronics Engineering to make her mark in the creative industry.",
+          fullText: "Beyond her work in animation and VFX, Cina is an award-winning screenplay writer and a talented artist, demonstrating her creativity across multiple mediums. Her passion for the arts extends to classical dance, where she finds both inspiration and solace. Cina's diverse talents and experiences paint the picture of a truly multifaceted personality, seamlessly blending technical skill with artistic expression."
+      },
+      {
+          name: "Mr. P. Arul Pandi",
+          place: "4th Place",
+          bookTitle: "Opt To Options Trading After Reading These Pages",
+          image: "/images/Arul Pandi.png",
+          intro: " is a seasoned professional with over 30 years of experience in the financial sector, having served as an executive at a leading Government of India-owned bank. His deep passion for the financial markets and mastery of various technical trading tools have made him a respected figure in the trading community.",
+          fullText: "Inspired by a desire to share his knowledge, Mr. Pandi transitioned into writing, with his debut book Don't Trade Before Learning These 14 Candlestick Patterns becoming a bestseller on Amazon. His books provide practical, accessible insights for traders of all levels, and he actively conducts workshops and seminars to guide others in enhancing their trading skills."
+      },
+      {
+          name: "Dr. Bijoy Chandra Ghosh,",
+          place: "5th Place",
+          bookTitle: "Principles and Practices of Organic Farming and Quality Food Production",
+          image: "/images/Dr.Bijoy Chandra Ghosh.png",
+          intro: " a retired professor from the Indian Institute of Technology, Kharagpur, has had a distinguished career in agricultural research. His pioneering work has significantly advanced the understanding of organic farming and soil health, particularly highlighting the detrimental effects of chemical farming on the environment.",
+          fullText: "With 185 research papers published in national and international journals, he has made a substantial contribution to sustainable agriculture. Dr. Ghosh has supervised 18 Ph.D. students and developed numerous entrepreneurs in composting and vermicomposting. His expertise spans tea cultivation, rooftop gardening, and crop diversification, and he has traveled extensively to share his knowledge with the global agricultural community."
+      }
+  ];
 
+  // Function to generate author HTML dynamically
+  function renderAuthors(authors) {
+      const container = document.getElementById("authorContainer");
+
+      authors.forEach(author => {
+          // Create author HTML structure
+          const authorHTML = `
+              <div class="row p-0 m-0 align-items-center justify-content-between mb-5">
+                  <div class="col-lg-4 text-center" data-aos="fade-right">
+                      <img src="${author.image}" alt="${author.name}" class="img-fluid author-img">
+                  </div>
+                  <div class="col-lg-8 col-12 mt-4 mt-lg-0" data-aos="fade-left">
+                      <h4 data-aos="fade-down">${author.name} - <span class="place">${author.place}</span> <i class="fa-duotone fa-solid fa-trophy fa-beat-fade text-warning"></i></h4>
+                      <h4>Book Title: ${author.bookTitle}</h4>
+                      
+                      <p class="m-0 p-0 mb-2 paragraph-text about-author mt-3">
+                          <strong>${author.name}</strong> ${author.intro}<span class="dots">...</span>
+                      </p>
+                      <p class="mt-3 paragraph-text about-author more-text" style="display: none;">
+                          ${author.fullText}
+   
+                      </p>
+                      <a class="read-more-btn p-0 m-0" data-aos="fade-up" href="javascript:void(0);">Read More</a>
+                      <br>
+                      <button class="see-book mt-3" data-aos="fade-up">Explore My Book</button>
+                  </div>
+              </div>
+          `;
+
+          // Append author HTML to container
+          container.insertAdjacentHTML("beforeend", authorHTML);
+      });
+
+      // Add read more functionality to each link
+      setupReadMoreLinks();
+  }
+
+  // Function to handle Read More / Read Less functionality
+  function setupReadMoreLinks() {
+      const readMoreLinks = document.querySelectorAll(".read-more-btn");
+
+      readMoreLinks.forEach(link => {
+          link.addEventListener("click", function () {
+              const dots = this.previousElementSibling.previousElementSibling.querySelector(".dots");
+              const moreText = this.previousElementSibling;
+
+              // Toggle display of the additional paragraph and dots
+              if (moreText.style.display === "none" || !moreText.style.display) {
+                  moreText.style.display = "inline";
+                  dots.style.display = "none";
+                  this.textContent = "Read Less";
+              } else {
+                  moreText.style.display = "none";
+                  dots.style.display = "inline";
+                  this.textContent = "Read More";
+              }
+          });
+      });
+  }
+
+  // Render authors on page load
+  document.addEventListener("DOMContentLoaded", () => {
+      renderAuthors(authors);
+  });
+</script>
 </body>
 </html>
