@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerald Literati Awards</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root{
+          ---primary-color:#ff7b59;
+          ---primary-color-dark:#fc613a;
+          ---sec-color:#115e9d;
+        }
+        
+        .top-img{
+            background-image: url(/images/book-fair/book-fair-Bannar.png);
+            background-size:cover;
+            height: 70vh;
+        }
+        /* .heading-text{
+         font-size: 33px;
+         font-family: 'Open Sans', sans-serif; 
+        color: #2c2b2b;
+        } */
+        .heading-text-h3{
+         font-size: 20px;
+         font-family: 'Open Sans', sans-serif; 
+        color: #2c2b2b;
+        }
+        .paragraph-text{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 17px;
+            line-height: 30px;
+            color: #2c2b2b;
+         
+        }
+        
+        .list-unstyled a i ,.social-icons a i{
+            color: var(---primary-color);
+        }
+        
+        .list-unstyled a{
+          color: var(---sec-color);
+        }
+        .list-unstyled a:hover{
+          color:#2495f1;
+        }
+        .list-unstyled a:hover i{
+          color: var(---primary-color-dark);
+        }
+        
+        .see-book{
+          height: 40px;
+          min-width: 100px;
+          border-radius: 5px;
+          background: transparent;
+          border:1px solid var(---primary-color-dark) !important;
+          transition: all 0.5s ease-in-out;
+        }
+        .see-book:hover{
+          background-color: #ff7b59;
+        }
+         img{
+          border-radius: 10px;
+          box-shadow: rgba(17, 17, 26, 0.045) 0px 1px 0px, rgba(17, 17, 26, 0.067) 0px 8px 24px, rgba(17, 17, 26, 0.018) 0px 16px 48px;
+         }
+        h2{
+          color: var(---primary-color);
+        }
+              
+        .palce{
+          color: var(---primary-color-dark);
+        }
+      
+
+
+        
+      /* General Styling */
+      .video-popup {
+          text-align: center;
+          margin: 40px 0;
+      }
+
+      .video-popup h2 {
+          font-size: 2rem;
+          margin-bottom: 20px;
+          color: #333;
+      }
+
+      /* Video Thumbnail */
+      .video-container {
+          position: relative;
+          display: inline-block;
+          width: 80%;
+          height: 100%;
+          margin: 0 auto;
+          cursor: pointer;
+      }
+
+      .video-thumbnail {
+          position: relative;
+          width: 100%;
+          height: 100%;
+      }
+
+      .video-thumbnail img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+      }
+
+      .video-thumbnail .play-button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: rgba(0, 0, 0, 0.6);
+          color: white;
+          font-size: 3rem;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.3s ease;
+      }
+
+      .video-thumbnail:hover .play-button {
+          background: rgba(0, 0, 0, 0.8);
+      }
+
+      .video-title {
+          position: absolute;
+          bottom: 10px;
+          left: 20px;
+          color: white;
+          font-size: 1.5rem;
+          font-weight: bold;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Popup Overlay */
+      .popup-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.8);
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+      }
+
+      .popup-content {
+          position: relative;
+          width: 80%;
+          height: 80%;
+      }
+
+      .popup-content iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          border-radius: 8px;
+      }
+
+      .close-popup {
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          font-size: 2rem;
+          color: white;
+          cursor: pointer;
+      }
+  </style>
+    
+   <style>
+    /* Gallery Container */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.gallery-image {
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Popup Overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Close Button */
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Navigation Buttons */
+.popup-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.popup-btn.prev {
+    left: 10px;
+}
+
+.popup-btn.next {
+    right: 10px;
+}
+
+   </style>
+
+       
+</head>
+
+<body>
+
+  <!-- Hero Section -->
+  <section class=" container-fluid  text-white  " >
+    <div class="  top-img d-flex justify-content-start align-items-center">
+    </div>
+   
+       
+  </section>
+
+
+<section>
+<div id="2024-Award-Winners" class="py-5 mt-5 top-content d-flex flex-column justify-content-center align-items-center "><h2 class="text-center" data-aos="fade-up">Explore Book fairs With Prowess</h2>
+  <p class="text-center paragraph-text col-lg-10 col-12 mt-2  p-0 m-0" data-aos="fade-up">Discover the World of Books with Prowess Publishing at Book Fairs.</p>
+  <p class="text-center paragraph-text col-lg-10 col-12 p-0 m-0" data-aos="fade-up">Book fairs are more than just exhibitions; they are celebrations of literature, creativity, and the power ofstorytelling. At Prowess Publishing, we actively participate in prominent book fairs, offering authors andreaders a unique opportunity to connect, engage, and explore the world of books.</p>
+  
+  </div>
+</section>
+
+<section id="aim-of-the-awards" class="awards-section" >
+  <div class="container mt-4">
+      <div class="row d-flex justify-content-around  align-items-satrt ">
+          
+        <div class="col-md-6 " data-aos="fade-right">
+          <img src="/images/book-fair/book-fair.jpg" alt="Emerald Awards Literati Logo" class="aim-img img-fluid">
+      </div>
+          
+          <div class="col-12 col-lg-5 mt-lg-0 mt-4 text-start d-flex flex-column justify-content-center align-items-start " data-aos="fade-left">
+            <h3 class="heading-text-h3 fw-bold">Why Book Fairs Matter</h3>
+            <p class="paragraph-text py-0 my-0 mt-3">Book fairs are dynamic events that bring together authors, readers, and publishers in a shared celebration of literature. These fairs provide a unique platform for:</p> 
+            <ul class="py-0 my-0 mt-3 gap-2 d-flex flex-column">
+                  
+                  <li class="paragraph-text">  Authors to showcase their work to a wider audience.
+                    </li>
+                  <li class="paragraph-text">  Readers to discover new books, genres, and voices.
+                    </li>
+                  <li class="paragraph-text">  Publishers to build connections within the literary community.
+                    </li>
+              </ul>
+              <p class="paragraph-text mt-3"> Whether you're looking to meet your favorite authors, explore trending titles, or discover self-publishingopportunities, book fairs offer something for everyone.</p>
+          </div>   
+      </div>
+  </div>
+
+  <div class="container mt-4" data-aos="fade-top">
+    <h3 class="heading-text-h3 fw-bold">Benefits of Participating in Book Fairs with Prowess</h3>
+    <p class="paragraph-text py-0 my-0 mt-3">Visiting the Prowess Publishing booth at book fairs offers numerous benefits:</p> 
+    <ul class="py-0 my-0 mt-3 gap-1 d-flex flex-column">
+          
+          <li class="paragraph-text">  Engage with authors and hear the stories behind their works.
+            </li>
+          <li class="paragraph-text">  Explore curated collections of bestselling books, including hidden gems.
+            </li>
+          <li class="paragraph-text">  Receive publishing advice and learn how Prowess can help you turn your manuscript into apublished work.
+            </li>
+          <li class="paragraph-text">  Join interactive events such as book signings, live readings, and panel discussions.
+            </li>
+    </ul>
+    <p class="paragraph-text mt-3"> Whether you're looking to meet your favorite authors, explore trending titles, or discover self-publishingopportunities, book fairs offer something for everyone.</p>
+  
+  
+    <h3 class="heading-text-h3 fw-bold">Our Commitment to the Literary Community</h3>
+    <p class="paragraph-text py-0 my-0 mt-3">At Prowess Publishing, we are dedicated to supporting authors and fostering a culture of reading.Through our active participation in walking bookfairs and renowned literary events, we aim to connectwriters and readers, providing self-publishing solutions and celebrating the art of storytelling.</p> 
+    <p class="paragraph-text py-0 my-0 mt-3">Join us as we continue to build unforgettable literary experiences at events like the Chennai Book Fairand other global literary gatherings. Prowess Publishing is your gateway to the world of literature.</p> 
+  
+    <h3 class="heading-text-h3 fw-bold mt-3">Chennai Book Fair 2024 – A Memorable Chapter with Prowess</h3>
+    <p class="paragraph-text py-0 my-0 ">The 84th Chennai Book Fair, held in January 2024 at the prestigious YMCA College, Nandanam, was amonumental event in the literary world. This renowned fair brought together over 900 publishers,offering a vibrant platform for readers, authors, and publishers to celebrate their shared love for booksand stories.</p> 
+
+    <h3 class="heading-text-h3 fw-bold mt-3">Prowess at the Chennai Book Fair 2024</h3>
+    <p class="paragraph-text py-0 my-0 ">At Prowess Publishing, our participation in the Chennai Book Fair was nothing short of extraordinary. Ourbooth stood out as a hub for literary exploration, attracting visitors from all walks of life, includingaspiring authors, avid readers, and industry professionals.</p> 
+    
+    <h3 class="heading-text-h3 fw-bold mt-3">Key Highlights of Our Booth:</h3>
+    <p class="paragraph-text py-0 my-0 ">Meet the Authors: Visitors had the opportunity to engage with our celebrated authors, gaining insightsinto their creative journeys and the inspiration behind their works.</p> 
+    <p class="paragraph-text py-0 my-0 ">Showcase of Titles: We proudly displayed an array of books from diverse genres, catering to every typeof reader.</p> 
+    <p class="paragraph-text py-0 my-0 ">Publishing Consultations: Aspiring writers visited our booth to learn about self-publishing opportunitiesand how Prowess can bring their stories to life.</p> 
+    <p class="paragraph-text py-0 my-0 ">Interactive Sessions: We hosted book signings and live readings, creating a dynamic and engagingexperience for visitors.</p> 
+
+    <h3 class="heading-text-h3 fw-bold mt-3">The Impact of Our Participation</h3>
+    <p class="paragraph-text py-0 my-0 ">Our presence at the Chennai Book Fair 2024 allowed us to:</p> 
+    <p class="paragraph-text py-0 my-0 ">• Reach a wide audience of passionate readers and potential authors.</p> 
+    <p class="paragraph-text py-0 my-0 ">• Strengthen our connection with the vibrant literary community in Chennai.</p> 
+    <p class="paragraph-text py-0 my-0 ">• Enhance visibility for our authors and their incredible works.</p> 
+    <p class="paragraph-text py-0 my-0 ">• Inspire many aspiring writers to begin their self-publishing journey.</p> 
+
+
+    <h3 class="heading-text-h3 fw-bold mt-3">A Glimpse Into the Experience</h3>
+    <p class="paragraph-text py-0 my-0 ">The energy at the fair was unmatched, with thousands of visitors exploring stalls, connecting withauthors, and discovering new reads. The Prowess booth became a focal point for many, as we showcasedour commitment to celebrating and empowering storytellers.</p> 
+   
+    <h3 class="heading-text-h3 fw-bold mt-3">Looking Ahead</h3>
+    <p class="paragraph-text py-0 my-0 ">The Chennai Book Fair 2024 was a testament to the enduring power of books and the vibrant communitythat surrounds them. As we look forward to participating in future fairs, including the Chennai Book Fair2025, we remain dedicated to connecting stories, authors, and readers in meaningful ways.</p> 
+   
+  </div>
+</section>
+
+
+<section class="video-popup  mt-5 d-flex flex-column justify-content-center align-items-center">
+  <h2>Event Highlights</h2>
+  <div class="video-container">
+      <!-- Video Thumbnail -->
+      <div class="video-thumbnail" id="video-thumbnail">
+          <img src="/images/Banner.png" alt="Video Thumbnail" />
+          <div class="play-button"><i class="fa fa-play"></i></div>
+          <p class="video-title">CIBF 2023</p>
+      </div>
+  </div>
+
+  <!-- Video Popup -->
+  <div class="popup-overlay" id="popup-overlay">
+      <div class="popup-content">
+          <span class="close-popup" id="close-popup">&times;</span>
+          <iframe
+              id="popup-video"
+              src=""
+              title="Event Video"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+          ></iframe>
+      </div>
+  </div>
+
+  
+
+</section>
+
+
+ <!-- Image Gallery -->
+
+
+<section class="container gallery-container">
+  <div class="gallery-image"><img src="images/13194955_15Z_2102.w023.n001.100B.p1.100.jpg" alt="Image 1"></div>
+  <div class="gallery-image"><img src="images/aim of the award.png" alt="Image 2"></div>
+  <div class="gallery-image"><img src="images/Banner.png" alt="Image 3"></div>
+  <div class="gallery-image"><img src="images/Cina KS.png" alt="Image 4"></div>
+  <div class="gallery-image"><img src="images/Dr.Kumaresan.png" alt="Image 5"></div>
+  <div class="gallery-image"><img src="images/image 6.png" alt="Image 6"></div>
+  <div class="gallery-image"><img src="images/R.V. Reddy.png" alt="Image 7"></div>
+  <div class="gallery-image"><img src="images/street-market-sunset.jpg" alt="Image 8"></div>
+</section>
+
+<div class="container mt-4" data-aos="fade-top">
+  
+  
+  <h3 class="heading-text-h3 fw-bold">Join Prowess at the Chennai Book Fair 2025 – An Invitation to Authors and Book Lovers</h3>
+  <p class="paragraph-text py-0 my-0 mt-3">We are thrilled to announce our participation in the highly anticipated 85th Chennai Book Fair, takingplace from December 27, 2024, to January 12, 2025, at the iconic YMCA College, Nandanam. This grandliterary celebration promises to bring together readers, writers, and over 900 publishers in a vibrantshowcase of books, creativity, and storytelling.</p> 
+  <h3 class="heading-text-h3 fw-bold">Be Part of Our Journey</h3>
+  <p class="paragraph-text py-0 my-0 mt-3">At Prowess Publishing, we are passionate about empowering authors and connecting stories withreaders worldwide. This year, we’re bringing a host of exciting opportunities to the Chennai Book Fair,and we want you to be part of it!</p> 
+  <h3 class="heading-text-h3 fw-bold">What to Expect at Our Booth</h3>
+  <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold"> Showcase Your Work:</span> Aspiring and established authors can explore how to bring their manuscripts to lifewith our self-publishing solutions.</p> 
+  <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold">Meet Our Authors:</span> Interact with published authors, learn about their journeys, and get inspired to startyour own.</p> 
+  <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold">Discover Our Books:</span> Explore a curated collection of books across genres, from thought-provoking fictionto insightful non-fiction.Personalized Publishing Consultations: Sit down with our experts to learn about publishingopportunities, marketing strategies, and global distribution.Interactive Sessions: Join live book readings, signings, and discussions led by our featured authors andpublishing professionals. </p> 
+  <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold">Personalized Publishing Consultations: </span>Sit down with our experts to learn about publishingopportunities, marketing strategies, and global distribution.</p> 
+  <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold">Interactive Sessions:</span> Join live book readings, signings, and discussions led by our featured authors andpublishing professionals.  </p> 
+  <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold"></span> </p> 
+ 
+  <h3 class="heading-text-h3 fw-bold">Why Visit Us at the Chennai Book Fair 2025?</h3>
+  <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold">Exclusive Offers:</span> Special discounts on publishing packages for authors visiting our booth. </p> 
+  <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold">Engage with the Literary Community:</span> Meet like-minded readers and writers, and discover the power ofnetworking within the literary ecosystem.</p>
+  <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold">Learn About Self-Publishing:</span>From manuscripts to marketing, we’ll guide you through every step of thepublishing process.</p>
+  <!-- <p class="paragraph-text py-0 my-0 mt-3"><span class="fw-bold"></span> </p> -->
+  <p class="paragraph-text py-0 my-0 mt-3">Authors, Let’s Make Your Story Shine!</p>
+  <p class="paragraph-text py-0 my-0 mt-3">This is your chance to take the first step toward realizing your publishing dreams. Bring your manuscriptor ideas to the Prowess booth, and our team will help you craft a personalized path to becoming apublished author.</p>
+
+
+  <h3 class="heading-text-h3 fw-bold">Looking Forward to Meeting You</h3>
+  <p class="paragraph-text py-0 my-0 mt-3">The Chennai Book Fair 2025 is more than an event — it’s a celebration of stories, creativity, and theliterary spirit. Whether you’re an aspiring author, an avid reader, or a seasoned writer, our booth is theperfect place to connect, explore, and grow.</p> 
+  <p class="paragraph-text py-0 my-0 mt-3">Mark your calendars and join us in making this year’s book fair an unforgettable experience!</p> 
+  <h3 class="heading-text-h3 fw-bold">Stay Tuned for Updates</h3>
+  <p class="paragraph-text py-0 my-0 mt-3">Follow us on our social media channels and keep an eye on our website for updates, sneak peeks, andmore information about our participation in the Chennai Book Fair 2025.</p> 
+
+  <h3 class="heading-text-h3 fw-bold">Gallery (Coming Soon!)</h3>
+  <p class="paragraph-text py-0 my-0 mt-3">We’ll share photos and videos of the event to capture all the memorable moments, so stay connected towitness the magic of the fair.</p> 
+
+</div>
+
+<!-- Popup Overlay for Gallery -->
+<div class="popup-overlay" id="popup-overlay-gallery">
+  <div class="popup-content">
+      <span class="close-popup" id="close-popup-gallery">&times;</span>
+      <button class="popup-btn prev" id="prev-btn-gallery">&#10094;</button>
+      <img id="popup-image" src="" alt="Popup Image">
+      <button class="popup-btn next" id="next-btn-gallery">&#10095;</button>
+  </div>
+</div>
+
+
+
+
+<script>
+  // =========================
+  // Gallery Popup Script
+  // =========================
+  document.addEventListener("DOMContentLoaded", () => {
+    const galleryImages = document.querySelectorAll(".gallery-image img");
+    const popupOverlayImg = document.getElementById("popup-overlay-gallery");
+    const popupImage = document.getElementById("popup-image");
+    const closePopupImg = document.getElementById("close-popup-gallery");
+    const prevBtn = document.getElementById("prev-btn-gallery");
+    const nextBtn = document.getElementById("next-btn-gallery");
+    let currentIndex = 0;
+
+    // Open Popup with Clicked Image
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        currentIndex = index;
+        updatePopupImage();
+        popupOverlayImg.style.display = "flex";
+      });
+    });
+
+    // Update Popup Image
+    function updatePopupImage() {
+      popupImage.src = galleryImages[currentIndex].src;
+      popupImage.alt = galleryImages[currentIndex].alt;
+    }
+
+    // Close Popup
+    closePopupImg.addEventListener("click", () => {
+      popupOverlayImg.style.display = "none";
+    });
+
+    // Navigate Images
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      updatePopupImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      updatePopupImage();
+    });
+
+    // Close Popup on Outside Click
+    popupOverlayImg.addEventListener("click", (e) => {
+      if (e.target === popupOverlayImg) {
+        popupOverlayImg.style.display = "none";
+      }
+    });
+
+    // =========================
+    // Video Popup Script
+    // =========================
+    const thumbnail = document.getElementById("video-thumbnail");
+    const popupOverlay = document.getElementById("popup-overlay");
+    const popupVideo = document.getElementById("popup-video");
+    const closePopup = document.getElementById("close-popup");
+
+    // Open the popup and play video
+    thumbnail.addEventListener("click", () => {
+      const videoURL = "https://www.youtube.com/embed/o4f0WxPPhFU?si=hvFZHY8fSn48aolS"; // Your video URL
+      popupVideo.src = videoURL;
+
+      // Set iframe dimensions (optional)
+      popupVideo.width = "420";
+      popupVideo.height = "345";
+
+      popupOverlay.style.display = "flex";
+    });
+
+    // Close the popup and stop video
+    closePopup.addEventListener("click", () => {
+      popupVideo.src = "";
+      popupOverlay.style.display = "none";
+    });
+
+    // Close popup if clicking outside the video
+    popupOverlay.addEventListener("click", (e) => {
+      if (e.target === popupOverlay) {
+        popupVideo.src = "";
+        popupOverlay.style.display = "none";
+      }
+    });
+
+    // =========================
+    // AOS Animation Initialization
+    // =========================
+    AOS.init({
+      duration: 2500, // Duration of animation in ms
+      easing: "ease-in-out", // Easing function
+      once: true, // Animation only happens once
+      mirror: false, // Animation repeats on scroll up
+    });
+  });
+</script>
+
+<!-- External Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+
+</body>
+</html>

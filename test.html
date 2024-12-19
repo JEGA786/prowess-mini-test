@@ -3,220 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Responsive Slider</title>
+    <title>Image Gallery with Popup and Slider</title>
     <style>
-       
+        /* Gallery Styling */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
 
-        .slider-root {
-            width: 100%;
-            max-width: 1200px;
+        .gallery-image {
+          display: flex;
+          max-width: 350px;
+          max-height: 350px;
+            cursor: pointer;
             overflow: hidden;
             position: relative;
+            border-radius: 8px;
         }
 
-        .slider-container {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .slide {
-            min-width: calc(100% / 3); /* Default: 3 slides per view */
-            box-sizing: border-box;
-            padding: 5px;
-            text-align: center;
-        }
-
-        .slide img {
+        .gallery-image img {
             width: 100%;
-            height: 200px;
+            height: auto;
+            transition: transform 0.3s ease;
             object-fit: cover;
-            border-radius: 5px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            background-color: #ddd; /* Placeholder for empty slides */
         }
 
-        .Events-name {
-            margin: 10px 0;
-            font-size: 16px;
-            font-weight: bold;
+        .gallery-image:hover img {
+            transform: scale(1.05);
         }
 
-        .see-more {
-            text-decoration: none;
-            color: #007BFF;
-            font-size: 14px;
+        /* Popup Overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .popup-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
 
         /* Navigation Buttons */
-        .nav-btn {
+        .popup-btn {
             position: absolute;
-            top: 35%;
-            transform: translateY(-30%);
-            background-color: rgba(0, 0, 0, 0.5);
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
+            font-size: 2rem;
             padding: 10px;
             cursor: pointer;
-            z-index: 5;
-            border-radius: 50%;
+            z-index: 10;
         }
 
-        .prev {
+        .popup-btn.prev {
             left: 10px;
         }
 
-        .next {
+        .popup-btn.next {
             right: 10px;
         }
 
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .pagination-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #bbb;
-            border-radius: 50%;
-            margin: 0 5px;
+        /* Close Button */
+        .close-popup {
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            color: white;
+            font-size: 2rem;
             cursor: pointer;
-            transition: background-color 0.3s;
+            z-index: 10;
         }
 
-        .pagination-dot.active {
-            background-color: #333;
-        }
+        /* Popup Overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
-        /* Responsive Settings */
-        @media (max-width: 768px) {
-            .slide {
-                min-width: calc(100% / 2); /* 2 slides per view */
-            }
-        }
+.popup-content {
+    position: relative;
+    width: 80%;  /* Slider width */
+    height: 80%; /* Slider height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        @media (max-width: 480px) {
-            .slide {
-                min-width: 100%; /* 1 slide per view */
-            }
-        }
+.popup-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image fits inside without distortion */
+    border-radius: 8px;
+}
+
+/* Navigation Buttons */
+.popup-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.popup-btn.prev {
+    left: 10px;
+}
+
+.popup-btn.next {
+    right: 10px;
+}
+
+/* Close Button */
+.close-popup {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
     </style>
 </head>
 <body>
 
-    <section class="upcoming-events gap-5  min-vh-100 d-flex p-0 m-0 flex-column justify-content-center align-items-center ">
-        <h6 data-aos="fade-up" class="text-center heading-h6">Upcoming Events</h6>
-        
-   
+    <!-- Image Gallery -->
+    <section class="gallery-container">
+        <div class="gallery-image"><img src="images/13194955_15Z_2102.w023.n001.100B.p1.100.jpg" alt="Image 1"></div>
+        <div class="gallery-image"><img src="/images/aim of the award.png" alt="Image 2"></div>
+        <div class="gallery-image"><img src="/images/Banner.png" alt="Image 3"></div>
+        <div class="gallery-image"><img src="/images/Cina KS.png" alt="Image 4"></div>
+        <div class="gallery-image"><img src="/images/Dr.Kumaresan.png" alt="Image 5"></div>
+        <div class="gallery-image"><img src="/images/image 6.png" alt="Image 6"></div>
+        <div class="gallery-image"><img src="/images/R.V. Reddy.png" alt="Image 7"></div>
+        <div class="gallery-image"><img src="/images/street-market-sunset.jpg" alt="Image 8"></div>
+    </section>
 
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-content">
+            <span class="close-popup" id="close-popup">&times;</span>
+            <button class="popup-btn prev" id="prev-btn">&#10094;</button>
+            <img id="popup-image" src="" alt="Popup Image">
+            <button class="popup-btn next" id="next-btn">&#10095;</button>
+        </div>
+    </div>
 
-<div class="slider-root">
-    <!-- Slider -->
-    <button class="nav-btn prev">❮</button>
-    <div class="slider-container" id="slider"></div>
-    <button class="nav-btn next">❯</button>
+    <script>
+        // JavaScript Variables
+        const images = document.querySelectorAll('.gallery-image img');
+        const popupOverlay = document.getElementById('popup-overlay');
+        const popupImage = document.getElementById('popup-image');
+        const closePopup = document.getElementById('close-popup');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
 
-    <!-- Pagination -->
-    <div class="pagination" id="pagination"></div>
-</div>
-</section>
-<script>
-    const slider = document.getElementById('slider');
-    const pagination = document.getElementById('pagination');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    let currentIndex = 0;
+        let currentIndex = 0;
 
-
-    // Data for slides
-    const slidesData = [
-        { src: '/images/Banner.png', name: 'Awars-2024' },
-        { src: '/images/street-market-sunset.jpg', name: 'Event 2' },
-        { src: '/images/Banner.png', name: 'Event 3' },
-        { src: '/images/Banner.png', name: 'Event 4' },
-        { src: '/images/aim of the award.png', name: 'Event 5' },
-        { src: '/images/Banner.png', name: 'Event 6' },
-        { src: '/images/Banner.png', name: 'Event 7' },
-        { src: '/images/freepik__retouch__16094.png', name: 'Event 8' },
-        { src: '/images/Banner.png', name: 'Event 9' }
-    ];
-
-    let slidesPerView = getSlidesPerView();
-
-    // Generate slides dynamically
-    slidesData.forEach(data => {
-        const slide = document.createElement('div');
-        slide.className = 'slide';
-        slide.innerHTML = `
-            <img src="${data.src}" alt="${data.name}">
-            <p class="Events-name">${data.name}</p>
-            <a href="#" class="see-more">See more</a>
-        `;
-        slider.appendChild(slide);
-    });
-
-    const slides = document.querySelectorAll('.slide');
-
-    // Create pagination dots
-    for (let i = 0; i < Math.ceil(slides.length / slidesPerView); i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('pagination-dot');
-        if (i === 0) dot.classList.add('active');
-        dot.dataset.index = i;
-        dot.addEventListener('click', () => goToSlide(i));
-        pagination.appendChild(dot);
-    }
-
-    // Update slidesPerView dynamically
-    window.addEventListener('resize', () => {
-        slidesPerView = getSlidesPerView();
-        updateSlider();
-    });
-
-    // Event listeners for buttons
-    prevBtn.addEventListener('click', () => moveToSlide(currentIndex - 1));
-    nextBtn.addEventListener('click', () => moveToSlide(currentIndex + 1));
-
-    // Move to specific slide
-    function goToSlide(index) {
-        currentIndex = index;
-        updateSlider();
-    }
-
-    // Move to next or previous slide
-    function moveToSlide(index) {
-        const totalSlides = Math.ceil(slides.length / slidesPerView);
-        if (index < 0) currentIndex = totalSlides - 1; // Loop to last slide
-        else if (index >= totalSlides) currentIndex = 0; // Loop to first slide
-        else currentIndex = index;
-        updateSlider();
-    }
-
-    // Update slider position and pagination
-    function updateSlider() {
-        const slideWidth = slides[0].offsetWidth;
-        slider.style.transform = `translateX(-${currentIndex * slideWidth * slidesPerView}px)`;
-        updatePagination();
-    }
-
-    // Update active pagination dot
-    function updatePagination() {
-        document.querySelectorAll('.pagination-dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
+        // Open Popup with Clicked Image
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentIndex = index;
+                updatePopupImage();
+                popupOverlay.style.display = 'flex';
+            });
         });
-    }
 
-    // Determine slides per view based on screen width
-    function getSlidesPerView() {
-        if (window.innerWidth <= 480) return 1;
-        else if (window.innerWidth <= 768) return 2;
-        return 3;
-    }
+        // Close Popup
+        closePopup.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+        });
 
-    // Initial setup
-    updateSlider();
-</script>
+        // Navigate to Previous Image
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updatePopupImage();
+        });
+
+        // Navigate to Next Image
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updatePopupImage();
+        });
+
+        // Update Popup Image Source
+        function updatePopupImage() {
+            popupImage.src = images[currentIndex].src;
+            popupImage.alt = images[currentIndex].alt;
+        }
+
+        // Close Popup on Outside Click
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) {
+                popupOverlay.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
